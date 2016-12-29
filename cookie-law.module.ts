@@ -12,9 +12,9 @@ import { CookieLawComponent } from './cookie-law.component';
 import { CookieLawService }   from './cookie-law.service';
 
 @NgModule({
-  imports: [CommonModule],
-  declarations: [CookieLawComponent],
-  providers: [CookieLawService],
-  exports: [CookieLawComponent]
+  imports: [ CommonModule ],
+  declarations: [ CookieLawComponent ],
+  providers: [ CookieLawService ],
+  exports: [ CookieLawComponent ]
 })
 export class CookieLawModule { }
