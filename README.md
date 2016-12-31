@@ -4,71 +4,82 @@
 
 angular2-cookie-law is an HTML `<cookie-law>` tag enhanced with styling and animation
 
+## Table of contents
+
+* [Installation](#installation)
+* [Setup](#setup)
+* [Usage](#usage)
+* [Example](#example)
+* [Options](#options)
+* [Contributing](#contributing)
+* [Changelog](#changelog)
+* [License](#license)
+
 ## Installation
 
-1. Install npm module:
+1. Install the component using `npm`:
 
   ```bash
   # To get the latest stable version and update package.json file:
   npm install angular2-cookie-law --save
   ```
 
-2. If you are using system.js you may want to add this into `map` and `package` config:
+  or `yarn` with:
 
-  ```json
-      {
-        "map": {
-            "angular2-cookie-law": "node_modules/angular2-cookie-law"
-        },
-        "packages": {
-            "angular2-cookie-law": {
-              "main": "index.js",
-              "defaultExtension": "js"
-            }
-        }
-      }
-      ```
-
-3. If you are using Webpack you may want to add this into your `vendor.js` file:
-
-  ```js
-  // Angular 2
-  import '@angular/platform-browser';
-  import '@angular/platform-browser-dynamic';
-  import '@angular/core';
-  import '@angular/common';
-  import '@angular/forms';
-  import '@angular/http';
-  import '@angular/router';
-
-  // RxJS
-  import 'rxjs';
-  import 'angular2-cookie-law';
+  ```bash
+  yarn add angular2-cookie-law
   ```
 
-angular2-cookie-law class is an Angular2 module therefore, it needs to be registered in the modules array (encouraged way):
+## Setup
+
+If you are using system.js you may want to add this into `map` and `package` config:
+
+```json
+{
+  "map": {
+      "angular2-cookie-law": "node_modules/angular2-cookie-law"
+  },
+  "packages": {
+      "angular2-cookie-law": {
+        "main": "index.js",
+        "defaultExtension": "js"
+      }
+  }
+}
+```
+
+If you are using Webpack you may want to add this into your `vendor.js` file:
 
 ```js
+// vendor.ts
+import '@angular/platform-browser';
+import '@angular/platform-browser-dynamic';
+import '@angular/core';
+import '@angular/common';
+import '@angular/http';
+
+// Third parties packages
+import 'rxjs';
+import 'angular2-cookie-law';
+```
+
+angular2-cookie-law class is an Angular2 module therefore,
+it needs to be registered in the modules array (encouraged way):
+
+```js
+// app.module.ts
 import { NgModule }            from '@angular/core';
 import { BrowserModule }       from '@angular/platform-browser';
-
 import { CookieLawModule }     from 'angular2-cookie-law';
-
 import { AppComponent }        from './app.component';
 
-/**
- * `AppModule` is the main entry point into Angular2's bootstraping process
- */
 @NgModule({
-  bootstrap: [ AppComponent ],
   declarations: [ AppComponent ],
-  imports: [ // import Angular's modules
+  imports: [
     BrowserModule,
-    CookieLawModule
+    CookieLawModule // import Angular's CookieLaw modules
   ],
-  providers: [
-    // expose our Services and Providers into Angular's dependency injection
-  ]
+  bootstrap: [ AppComponent ]
 })
 export class AppModule { }
 ```
@@ -78,6 +89,7 @@ export class AppModule { }
 Use the component anywhere around your application:
 
 ```js
+// app.component.ts
 import { Component } from '@angular/core';
 
 @Component({
@@ -92,6 +104,7 @@ export class AppComponent  { }
 ## Example
 
 ```js
+// app.component.ts
 import { Component } from '@angular/core';
 
 @Component({
@@ -142,3 +155,19 @@ eg.
 ```html
 <cookie-law learnMore="/learn-more" target="_self"></cookie-law>
 ```
+
+## Contributing
+
+1. Fork it!
+2. Create your feature branch: `git checkout -b my-new-feature`
+3. Commit your changes: `git commit -m 'Add some feature'`
+4. Push to the branch: `git push origin my-new-feature`
+5. Submit a pull request :sunglasses:
+
+## Changelog
+
+Changelog available [here](https://github.com/andreasonny83/angular2-cookie-law/blob/master/CHANGELOG.md)
+
+## License
+
+[MIT License](https://github.com/andreasonny83/angular2-cookie-law/blob/master/LICENSE) © Andrea SonnY
