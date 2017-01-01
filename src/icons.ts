@@ -1,9 +1,9 @@
 /**
  * angular2-cookie-law
  *
- * Copyright 2016, @andreasonny83, All rights reserved.
+ * Copyright 2016-2017, @andreasonny83, All rights reserved.
  *
- * Author: @andreasonny83 <andreasonny83@gmail.com>
+ * @author: @andreasonny83 <andreasonny83@gmail.com>
  */
 
 export const closeIcon: string = `

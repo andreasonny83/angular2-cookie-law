@@ -1,15 +1,24 @@
 /**
  * angular2-cookie-law
  *
- * Copyright 2016, @andreasonny83, All rights reserved.
+ * Copyright 2016-2017, @andreasonny83, All rights reserved.
  *
- * Author: @andreasonny83 <andreasonny83@gmail.com>
+ * @author: @andreasonny83 <andreasonny83@gmail.com>
  */
 
 import { Injectable, EventEmitter } from '@angular/core';
 
 @Injectable()
 export class CookieLawService {
+
+
+  seen(): boolean {
+    return this.cookieExisit('cookieLawSeen');
+  }
+
+  storeCookie(): void {
+    return this.setCookie('cookieLawSeen');
+  }
 
   /**
    * try to read a saved cookie
@@ -41,13 +50,5 @@ export class CookieLawService {
    */
   private setCookie(name: string): void {
     document.cookie = encodeURIComponent(name) + '=true; path=/';
-  }
-
-  seen(): boolean {
-    return this.cookieExisit('cookieLawSeen');
-  }
-
-  storeCookie(): void {
-    return this.setCookie('cookieLawSeen');
   }
 }
