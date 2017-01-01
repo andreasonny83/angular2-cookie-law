@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/andreasonny83/angular2-cookie-law#readme",
   "peerDependencies": {
-    "@angular/core": "2.2.0"
+    "@angular/core": "^2.0.0"
   },
   "devDependencies": {
     "@angular/common": "2.2.0",
