@@ -1,4 +1,4 @@
-export { CookieLawComponent } from './cookie-law.component';
-export { CookieLawService } from './cookie-law.service';
+export { CookieLawComponent } from './src/cookie-law.component';
+export { CookieLawService } from './src/cookie-law.service';
 
-export { CookieLawModule } from './cookie-law.module';
+export { CookieLawModule } from './src/cookie-law.module';

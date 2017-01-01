@@ -64,7 +64,7 @@ describe('CookieLawComponent', () => {
     fixture.detectChanges();
 
     expect(cookiesPolicyService.seen()).toBe(false);
-    expect(el.textContent).toContain('COOKIE POLICY');
+    expect(el.textContent).toContain('By continuing to browse the site, you\'re agreeing to our use of cookies.');
   });
 
   it('dismiss the notification', () => {

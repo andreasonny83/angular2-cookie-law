@@ -1,5 +1,8 @@
 # angular2-cookie-law
 
+[![Build Status](https://travis-ci.org/andreasonny83/angular2-cookie-law.svg?branch=master)](https://travis-ci.org/andreasonny83/angular2-cookie-law)
+[![Build status](https://ci.appveyor.com/api/projects/status/gy65rk7l0nln23nj?svg=true)](https://ci.appveyor.com/project/andreasonny83/angular2-cookie-law)
+
 > Angular2 component that provides a banner to inform users about the cookie law
 
 angular2-cookie-law is an HTML `<cookie-law>` tag enhanced with styling and animation
