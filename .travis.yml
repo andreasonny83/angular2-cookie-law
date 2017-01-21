@@ -2,12 +2,9 @@ sudo: false
 language: node_js
 
 node_js:
-  - 5
-  - stable
+  - 6
 
-before_script:
-  - npm install
-after_script:
+script:
   - npm run lint
-  - npm test:headless
+  - npm run test:headless
   - npm run coveralls
