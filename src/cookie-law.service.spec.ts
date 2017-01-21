@@ -22,7 +22,7 @@ describe('CookieLawService', () => {
   });
 
   it('#seen should read a cookie', () => {
-    let seenSpy = spyOn(service, 'cookieExisit');
+    let seenSpy = spyOn(service, 'cookieExisits');
 
     service.seen();
     expect(seenSpy).toHaveBeenCalled();

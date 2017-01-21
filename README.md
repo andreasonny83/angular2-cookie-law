@@ -1,5 +1,6 @@
 [![Build Status](https://travis-ci.org/andreasonny83/angular2-cookie-law.svg?branch=master)](https://travis-ci.org/andreasonny83/angular2-cookie-law)
 [![Build status](https://ci.appveyor.com/api/projects/status/gy65rk7l0nln23nj?svg=true)](https://ci.appveyor.com/project/andreasonny83/angular2-cookie-law)
+[![Coverage Status](https://coveralls.io/repos/github/andreasonny83/angular2-cookie-law/badge.svg)](https://coveralls.io/github/andreasonny83/angular2-cookie-law)
 
 # angular2-cookie-law
 
@@ -9,18 +10,18 @@ angular2-cookie-law is an HTML `<cookie-law>` tag enhanced with styling and anim
 
 ## Table of contents
 
-* [Installation](#installation)
-* [Setup](#setup)
-* [Usage](#usage)
-* [Example](#example)
-* [Options](#options)
-* [Contributing](#contributing)
-* [Changelog](#changelog)
-* [License](#license)
+*   [Installation](#installation)
+*   [Setup](#setup)
+*   [Usage](#usage)
+*   [Example](#example)
+*   [Options](#options)
+*   [Contributing](#contributing)
+*   [Changelog](#changelog)
+*   [License](#license)
 
 ## Installation
 
-1. Install the component using `npm`:
+1.  Install the component using `npm`:
 
   ```bash
   # To get the latest stable version and update package.json file:
@@ -35,7 +36,7 @@ angular2-cookie-law is an HTML `<cookie-law>` tag enhanced with styling and anim
 
 ## Setup
 
-If you are using system.js you may want to add this into `map` and `package` config:
+If you are using System.js you may want to add this into `map` and `package` config:
 
 ```json
 {
@@ -161,11 +162,11 @@ eg.
 
 ## Contributing
 
-1. Fork it!
-2. Create your feature branch: `git checkout -b my-new-feature`
-3. Commit your changes: `git commit -m 'Add some feature'`
-4. Push to the branch: `git push origin my-new-feature`
-5. Submit a pull request :sunglasses:
+1.  Fork it!
+1.  Create your feature branch: `git checkout -b my-new-feature`
+1.  Commit your changes: `git commit -m 'Add some feature'`
+1.  Push to the branch: `git push origin my-new-feature`
+1.  Submit a pull request :sunglasses:
 
 ## Changelog
 

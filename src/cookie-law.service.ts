@@ -13,7 +13,7 @@ export class CookieLawService {
 
 
   seen(): boolean {
-    return this.cookieExisit('cookieLawSeen');
+    return this.cookieExisits('cookieLawSeen');
   }
 
   storeCookie(): void {
@@ -27,7 +27,7 @@ export class CookieLawService {
    *
    * @return {string}      [the cookie's value]
    */
-  private cookieExisit(name: string): boolean {
+  private cookieExisits(name: string): boolean {
     let ca: Array<string> = document.cookie.split(';');
     let caLen: number = ca.length;
     let cookieName = name + '=';

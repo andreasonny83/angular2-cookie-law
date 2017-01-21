@@ -12,7 +12,6 @@ const path = require('path');
 /**
  * Webpack Plugins
  */
-const webpack = require('webpack');
 const ProvidePlugin = require('webpack/lib/ProvidePlugin');
 const LoaderOptionsPlugin = require('webpack/lib/LoaderOptionsPlugin');
 const ContextReplacementPlugin = require('webpack/lib/ContextReplacementPlugin');
@@ -56,7 +55,6 @@ module.exports = function (options) {
        * Make sure root is src
        */
       modules: [ path.resolve(__dirname, 'src'), 'node_modules' ]
-
     },
 
     /**
@@ -69,17 +67,16 @@ module.exports = function (options) {
      */
     module: {
       rules: [
-
         /**
-         * Source map loader support for *.js files
-         * Extracts SourceMaps for source files that as added as sourceMappingURL comment.
-         *
-         * See: https://github.com/webpack/source-map-loader
-         */
+        * Source map loader support for *.js files
+        * Extracts SourceMaps for source files that as added as sourceMappingURL comment.
+        *
+        * See: https://github.com/webpack/source-map-loader
+        */
         {
           enforce: 'pre',
           test: /\.js$/,
-          loader: 'source-map-loader',
+          use: 'source-map-loader',
           exclude: [
             // these packages have problems with their sourcemaps
             helpers.root('node_modules/rxjs'),
@@ -87,69 +84,38 @@ module.exports = function (options) {
           ]
         },
 
-        /**
-         * Typescript loader support for .ts and Angular 2 async routes via .async.ts
-         *
-         * See: https://github.com/s-panferov/awesome-typescript-loader
-         */
         {
           test: /\.ts$/,
-          loader: 'awesome-typescript-loader',
-          query: {
-            // use inline sourcemaps for "karma-remap-coverage" reporter
-            sourceMap: false,
-            inlineSourceMap: true,
-            compilerOptions: {
-
-              // Remove TypeScript helpers to be injected
-              // below by DefinePlugin
-              removeComments: true
-            }
-          },
+          use: [
+            'awesome-typescript-loader',
+            'angular2-template-loader'
+          ],
           exclude: [/\.e2e\.ts$/]
         },
 
-        /**
-         * Raw loader support for *.css files
-         * Returns file content as string
-         *
-         * See: https://github.com/webpack/raw-loader
-         */
         {
-          test: /\.css$/,
-          loader: ['to-string-loader', 'css-loader'],
+          test: /\.(html|css)$/,
+          use: 'raw-loader',
           exclude: [helpers.root('src/index.html')]
         },
 
         /**
-         * Raw loader support for *.html
-         * Returns file content as string
-         *
-         * See: https://github.com/webpack/raw-loader
-         */
-        {
-          test: /\.html$/,
-          loader: 'raw-loader',
-          exclude: [helpers.root('src/index.html')]
-        },
-
-        /**
-         * Instruments JS files with Istanbul for subsequent code coverage reporting.
-         * Instrument only testing sources.
-         *
-         * See: https://github.com/deepsweet/istanbul-instrumenter-loader
-         */
+        * Instruments JS files with Istanbul for subsequent code coverage reporting.
+        * Instrument only testing sources.
+        *
+        * See: https://github.com/deepsweet/istanbul-instrumenter-loader
+        */
         {
           enforce: 'post',
           test: /\.(js|ts)$/,
-          loader: 'istanbul-instrumenter-loader',
+          use: 'istanbul-instrumenter-loader',
           include: helpers.root('src'),
           exclude: [
             /\.(e2e|spec)\.ts$/,
             /node_modules/
           ]
-        }
-      ]
+      }
+    ]
     },
 
     /**

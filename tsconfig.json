@@ -1,16 +1,17 @@
 {
   "compilerOptions": {
-    "outDir": "build",
     "target": "es5",
     "module": "commonjs",
     "moduleResolution": "node",
-    "sourceMap": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "inlineSources": true,
-    "declaration": true,
-    "removeComments": true,
-    "noImplicitAny": false,
+    "allowSyntheticDefaultImports": true,
+    "sourceMap": true,
+    "noEmitHelpers": true,
+    "strictNullChecks": false,
+    "baseUrl": "./src",
+    "paths": {
+    },
     "lib": [
       "dom",
       "es6"
@@ -24,7 +25,8 @@
     ]
   },
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "dist"
   ],
   "awesomeTypescriptLoaderOptions": {
     "forkChecker": true,

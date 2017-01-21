@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.1.2 - 2017.01.21
+
+*   Coveralls support for unit test code coverage
+*   Upgrade to Webpack-2.2.0
+*   Mocha reporter for unit tests
+*   Template and CSS in external files
+
 ## 0.1.1 - 2017.01.01
 
 *   Fixing peerDependencies

@@ -5,4 +5,9 @@ node_js:
   - 5
   - stable
 
-script: npm run lint && npm t
+before_script:
+  - npm install
+after_script:
+  - npm run lint
+  - npm test:headless
+  - npm run coveralls
