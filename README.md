@@ -163,9 +163,13 @@ eg.
 
 ## Contributing
 
+This package is using the AngularJS commit messages as default way to contribute
+with commitizen node package integrated in this repository.
+
 1.  Fork it!
 1.  Create your feature branch: `git checkout -b my-new-feature`
-1.  Commit your changes: `git commit -m 'Add some feature'`
+1.  Add your changes: `git add .`
+1.  Commit your changes: `npm run commit`
 1.  Push to the branch: `git push origin my-new-feature`
 1.  Submit a pull request :sunglasses:
 
