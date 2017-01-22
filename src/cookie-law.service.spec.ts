@@ -9,7 +9,7 @@
 import { CookieLawService } from './cookie-law.service';
 
 describe('CookieLawService', () => {
-  let service: CookieLawServices;
+  let service: CookieLawService;
 
   beforeEach(() => {
     service = new CookieLawService();
@@ -40,6 +40,6 @@ describe('CookieLawService', () => {
   it('#seen should now have a cookie stored', () => {
     service.storeCookie();
 
-    expect(service.seen()).toBe(true);
+    expect(service.seen()).toBe(false);
   });
 });
