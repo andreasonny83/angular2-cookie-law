@@ -3,7 +3,7 @@
 ## 0.1.3 - 2017.01.22
 
 *   Commitizen support
-*   npm publish automated with semantic-release
+*   npm publish automated with TravicCI and semantic-release
 
 ## 0.1.2 - 2017.01.21
 
