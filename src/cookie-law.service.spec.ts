@@ -9,7 +9,7 @@
 import { CookieLawService } from './cookie-law.service';
 
 describe('CookieLawService', () => {
-  let service: CookieLawService;
+  let service: CookieLawServices;
 
   beforeEach(() => {
     service = new CookieLawService();
