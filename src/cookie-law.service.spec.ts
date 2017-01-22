@@ -40,6 +40,6 @@ describe('CookieLawService', () => {
   it('#seen should now have a cookie stored', () => {
     service.storeCookie();
 
-    expect(service.seen()).toBe(false);
+    expect(service.seen()).toBe(true);
   });
 });
