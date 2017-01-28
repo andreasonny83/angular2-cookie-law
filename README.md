@@ -15,6 +15,7 @@ angular2-cookie-law is an HTML `<cookie-law>` tag enhanced with styling and anim
 *   [Setup](#setup)
 *   [Usage](#usage)
 *   [Example](#example)
+*   [Demo App](#demo-app)
 *   [Options](#options)
 *   [Contributing](#contributing)
 *   [Changelog](#changelog)
@@ -128,6 +129,31 @@ export class AppComponent  { }
 #### Output
 
 ![cookie-law example](http://i.imgur.com/W9LUdwy.png)
+
+# Demo App
+
+Have a look at the [example](https://github.com/andreasonny83/angular2-cookie-law/tree/master/example)
+available in this repository for a real Angular2 application using the `Angular2-Cookie-Law` library.
+
+From your termianl, navigate inside the `demo` folder, then install all the Node dependencies using npm:
+
+```bash
+npm install
+```
+Or Yarn with:
+
+```bash
+yarn install
+```
+
+Then initialize the application with:
+
+```bash
+npm start
+```
+
+Open your browser to [http://localhost:9008/](http://localhost:9008/)
+to see the application running.
 
 ## Options
 

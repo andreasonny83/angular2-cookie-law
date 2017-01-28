@@ -1,1 +1,1 @@
-export * from './lib/cookie-law.module';
+export * from './src/cookie-law.module';

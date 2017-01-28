@@ -3,7 +3,7 @@
 ## 0.1.6 - 2017.01.22
 
 *   Demo Angular2 app
-*   lib folder on npm containing minified module ready to use
+*   `husky` to replace deprecated `ghooks`
 *   Documentation updated
 
 ## 0.1.3 - 2017.01.22

@@ -1,17 +1,17 @@
-{
+  {
   "compilerOptions": {
-    "target": "es6",
+    "target": "es5",
     "module": "commonjs",
     "moduleResolution": "node",
+    "sourceMap": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "allowSyntheticDefaultImports": true,
-    "sourceMap": true,
-    "declaration": true,
-    "noEmitHelpers": false,
-    "isolatedModules": false,
-    "strictNullChecks": false
+    "lib": ["es6", "dom"]
   },
+  "exclude": [
+    "node_modules"
+  ],
+  "include": [],
   "awesomeTypescriptLoaderOptions": {
     "forkChecker": true,
     "useWebpackText": true

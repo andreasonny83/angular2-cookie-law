@@ -2,9 +2,10 @@ var path = require('path');
 const ContextReplacementPlugin = require('webpack/lib/ContextReplacementPlugin');
 const LoaderOptionsPlugin = require('webpack/lib/LoaderOptionsPlugin');
 const CommonsChunkPlugin = require('webpack/lib/optimize/CommonsChunkPlugin');
+const TsConfigPathsPlugin = require('awesome-typescript-loader').TsConfigPathsPlugin;
 
 module.exports = {
-  devtool: 'inline-source-map',
+  devtool: 'cheap-module-source-map',
 
   entry: {
     'main': './src/app.ts'
@@ -46,6 +47,7 @@ module.exports = {
       options: {}
     }),
 
+    new TsConfigPathsPlugin(/* { tsconfig, compiler } */),
   ],
 
   devServer: {

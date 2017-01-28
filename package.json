@@ -8,9 +8,9 @@
     "test:headless": "karma start --browsers PhantomJS",
     "coveralls": "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls",
     "lint": "tslint -c tslint.json src/**/*.ts",
+    "precommit": "npm run lint && npm run test:headless",
     "commit": "git-cz",
-    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
-    "build": "rm -rf lib && tsc -p src"
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "repository": {
     "type": "git",
@@ -42,14 +42,13 @@
     "@types/source-map": "0.1.27",
     "@types/webpack": "1.12.34",
     "angular2-template-loader": "0.6.0",
-    "assets-webpack-plugin": "3.5.0",
     "awesome-typescript-loader": "2.2.4",
     "codelyzer": "2.0.0-beta.4",
     "commitizen": "2.9.5",
     "core-js": "2.4.1",
     "coveralls": "2.11.15",
     "cz-conventional-changelog": "1.2.0",
-    "ghooks": "^2.0.0",
+    "husky": "0.13.1",
     "istanbul-instrumenter-loader": "1.2.0",
     "jasmine-core": "2.5.2",
     "karma": "1.3.0",
@@ -69,15 +68,11 @@
     "tslint": "4.0.0",
     "typescript": "2.1.1",
     "webpack": "2.2.0",
-    "webpack-dev-server": "2.2.0",
     "zone.js": "0.7.4"
   },
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
-    },
-    "ghooks": {
-      "pre-commit": "npm run lint && npm run test:headless"
     }
   }
 }

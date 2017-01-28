@@ -5,8 +5,5 @@ node_modules
 npm-debug.log
 yarn-error.log
 
-# lib
-lib
-
 # Code coverage
 coverage
