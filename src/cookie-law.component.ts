@@ -31,8 +31,104 @@ import { closeIcon } from './icons';
       transition('* => *', animate('1000ms ease-in-out'))
     ])
   ],
-  templateUrl: './cookie-law.component.html',
-  styleUrls: ['./cookie-law.component.css']
+  template: `
+  <div class="cookie-law-wrapper"
+       *ngIf="!cookieLawSeen"
+       [@state]="cookieLawSeen">
+
+    <div class="copy">
+      <strong>By continuing to browse the site, you're agreeing to our use of cookies.</strong>
+      <span *ngIf="learnMore">
+        Learn more in our <a [href]="learnMore" [target]="target">privacy policy</a>.
+      </span>
+    </div>
+
+    <a href="#" role="button"
+                class="dismiss"
+                [innerHTML]="closeSvg"
+                (click)="dismiss($event)"></a>
+  </div>
+  `,
+  styles: [`
+    a {
+      color: #bbb;
+      -webkit-transition: color .2s;
+      transition: color .2s;
+    }
+    a:hover {
+      color: #fff;
+    }
+    a:hover svg {
+      fill: #fff;
+    }
+    .cookie-law-wrapper {
+      background: #333;
+      color: #bbb;
+      display: block;
+      font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+      font-size: 15px;
+      font-weight: 200;
+      line-height: 20px;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      z-index: 999999999;
+      font-smooth: always;
+      -webkit-font-smoothing: antialiased;
+    }
+    .dismiss {
+      display: block;
+      box-sizing: border-box;
+      padding: 10px;
+      position: absolute;
+      top: 0;
+      right: 10px;
+      text-decoration: none;
+      line-height: 20px;
+    }
+    .dismiss svg {
+      display: block;
+      fill: #bbb;
+      width: 20px;
+      height: 20px;
+      -webkit-transition: fill .2s;
+      transition: fill .2s;
+    }
+    .copy {
+      box-sizing: border-box;
+      padding: 10px 60px 10px 10px;
+    }
+    .copy strong {
+      color: #fff;
+      font-weight: 400;
+    }
+    .copy a {
+      text-decoration: underline;
+    }
+    .copy a:active, .copy a:hover {
+        outline: 0;
+    }
+
+    @media (min-width: 600px) {
+      /* For bigger devices: */
+      .copy {
+        padding: 20px 60px 20px 20px;
+        font-size: 18px;
+        line-height: 24px;
+      }
+      .dismiss {
+        top: 10px;
+        right: 15px;
+      }
+      .dismiss svg {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  `]
+  // templateUrl: './cookie-law.component.html',
+  // styleUrls: ['./cookie-law.component.css']
 })
 export class CookieLawComponent implements OnInit {
   @Input() learnMore: string = null;

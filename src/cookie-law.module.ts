@@ -18,3 +18,8 @@ import { CookieLawService }   from './cookie-law.service';
   exports: [ CookieLawComponent ]
 })
 export class CookieLawModule { }
+
+export {
+  CookieLawComponent,
+  CookieLawService
+};

@@ -1,0 +1,26 @@
+{
+  "name": "angular2-cookie-law-demo",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "webpack-dev-server --config ./webpack.config.js --progress --profile --watch --content-base src/"
+  },
+  "devDependencies": {
+    "@angular/common": "2.4.1",
+    "@angular/compiler": "2.4.1",
+    "@angular/core": "2.4.1",
+    "@angular/platform-browser": "2.4.1",
+    "@angular/platform-browser-dynamic": "2.4.1",
+    "@types/source-map": "0.1.27",
+    "@types/webpack": "1.12.34",
+    "angular2-template-loader": "0.6.0",
+    "awesome-typescript-loader": "2.2.4",
+    "core-js": "^2.4.1",
+    "raw-loader": "0.5.1",
+    "typescript": "2.1.1",
+    "webpack": "2.2.0",
+    "webpack-dev-server": "2.2.0",
+    "rxjs": "5.0.2",
+    "ts-helpers": "1.1.2",
+    "zone.js": "0.7.4"
+  }
+}

@@ -1,31 +1,17 @@
-{
+  {
   "compilerOptions": {
-    "target": "es6",
+    "target": "es5",
     "module": "commonjs",
     "moduleResolution": "node",
+    "sourceMap": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "allowSyntheticDefaultImports": true,
-    "sourceMap": true,
-    "noEmitHelpers": true,
-    "strictNullChecks": false,
-    "lib": [
-      "dom",
-      "es6"
-    ],
-    "types": [
-      "jasmine",
-      "node",
-      "selenium-webdriver",
-      "source-map",
-      "webpack"
-    ]
+    "lib": ["es6", "dom"]
   },
   "exclude": [
-    "node_modules",
-    "lib",
-    "demo"
+    "node_modules"
   ],
+  "include": [],
   "awesomeTypescriptLoaderOptions": {
     "forkChecker": true,
     "useWebpackText": true

@@ -7,25 +7,11 @@
     "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
     "sourceMap": true,
-    "noEmitHelpers": true,
-    "strictNullChecks": false,
-    "lib": [
-      "dom",
-      "es6"
-    ],
-    "types": [
-      "jasmine",
-      "node",
-      "selenium-webdriver",
-      "source-map",
-      "webpack"
-    ]
+    "declaration": true,
+    "noEmitHelpers": false,
+    "isolatedModules": false,
+    "strictNullChecks": false
   },
-  "exclude": [
-    "node_modules",
-    "lib",
-    "demo"
-  ],
   "awesomeTypescriptLoaderOptions": {
     "forkChecker": true,
     "useWebpackText": true

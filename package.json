@@ -9,7 +9,8 @@
     "coveralls": "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls",
     "lint": "tslint -c tslint.json src/**/*.ts",
     "commit": "git-cz",
-    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
+    "build": "rm -rf lib && tsc -p src"
   },
   "repository": {
     "type": "git",
@@ -60,7 +61,7 @@
     "karma-remap-coverage": "0.1.4",
     "karma-sourcemap-loader": "0.3.7",
     "karma-webpack": "2.0.1",
-    "raw-loader": "^0.5.1",
+    "raw-loader": "0.5.1",
     "rxjs": "5.0.2",
     "semantic-release": "6.3.2",
     "source-map-loader": "0.1.5",
@@ -68,6 +69,7 @@
     "tslint": "4.0.0",
     "typescript": "2.1.1",
     "webpack": "2.2.0",
+    "webpack-dev-server": "2.2.0",
     "zone.js": "0.7.4"
   },
   "config": {

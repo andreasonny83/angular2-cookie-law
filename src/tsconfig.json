@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "target": "es6",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "removeComments": true,
+    "sourceMap": true,
+    "outDir": "../lib",
+    "declaration": true
+  },
+  "compileOnSave": false,
+  "buildOnSave": false,
+  "atom": { "rewriteTsconfig": false }
+}
