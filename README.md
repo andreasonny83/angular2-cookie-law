@@ -2,6 +2,7 @@
 [![Build status](https://ci.appveyor.com/api/projects/status/gy65rk7l0nln23nj?svg=true)](https://ci.appveyor.com/project/andreasonny83/angular2-cookie-law)
 [![Coverage Status](https://coveralls.io/repos/github/andreasonny83/angular2-cookie-law/badge.svg)](https://coveralls.io/github/andreasonny83/angular2-cookie-law)
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
+[![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
 
 # angular2-cookie-law
 
@@ -201,7 +202,7 @@ with commitizen node package integrated in this repository.
 
 ## Changelog
 
-Changelog available [here](https://github.com/andreasonny83/angular2-cookie-law/blob/master/CHANGELOG.md)
+Changelog available [here](https://github.com/andreasonny83/angular2-cookie-law/releases)
 
 ## License
 
