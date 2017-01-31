@@ -7,3 +7,6 @@ yarn-error.log
 
 # Code coverage
 coverage
+
+# build
+lib

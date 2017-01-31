@@ -4,13 +4,15 @@
   "description": "Angular2 component that provides a banner to inform users about cookie law",
   "main": "index.js",
   "scripts": {
-    "test": "karma start",
-    "test:headless": "karma start --browsers PhantomJS",
+    "prebuild": "rm -rf lib",
+    "build": "rollup -c -f umd -o lib/angular2-cookie-law.umd.js",
+    "commit": "git-cz",
     "coveralls": "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls",
     "lint": "tslint -c tslint.json src/**/*.ts",
     "precommit": "npm run lint && npm run test:headless",
-    "commit": "git-cz",
-    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
+    "test:headless": "karma start --browsers PhantomJS",
+    "test": "karma start"
   },
   "repository": {
     "type": "git",
@@ -61,14 +63,17 @@
     "karma-sourcemap-loader": "0.3.7",
     "karma-webpack": "2.0.1",
     "raw-loader": "0.5.1",
+    "rollup": "^0.41.4",
+    "rollup-plugin-sourcemaps": "^0.4.1",
+    "rollup-plugin-typescript": "^0.8.1",
     "rxjs": "5.0.2",
     "semantic-release": "6.3.2",
     "source-map-loader": "0.1.5",
     "ts-helpers": "1.1.2",
-    "tslint": "4.0.0",
+    "tslint": "3.15.1",
     "typescript": "2.1.1",
     "webpack": "2.2.0",
-    "zone.js": "0.7.4"
+    "zone.js": "0.6.26"
   },
   "config": {
     "commitizen": {
