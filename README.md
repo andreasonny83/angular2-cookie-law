@@ -133,10 +133,10 @@ export class AppComponent  { }
 
 # Demo App
 
-Have a look at the [example](https://github.com/andreasonny83/angular2-cookie-law/tree/master/example)
+Have a look at the [demo](https://github.com/andreasonny83/angular2-cookie-law/tree/master/demo)
 available in this repository for a real Angular2 application using the `Angular2-Cookie-Law` library.
 
-From your termianl, navigate inside the `demo` folder, then install all the Node dependencies using npm:
+From your terminal, navigate inside the `demo` folder, then install all the Node dependencies using npm:
 
 ```bash
 npm install
