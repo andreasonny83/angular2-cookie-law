@@ -31,24 +31,6 @@ import { closeIcon } from './icons';
       transition('* => *', animate('1000ms ease-in-out'))
     ])
   ],
-  template: `
-  <div class="cookie-law-wrapper"
-       *ngIf="!cookieLawSeen"
-       [@state]="cookieLawSeen">
-
-    <div class="copy">
-      <strong>By continuing to browse the site, you're agreeing to our use of cookies.</strong>
-      <span *ngIf="learnMore">
-        Learn more in our <a [href]="learnMore" [target]="target">privacy policy</a>.
-      </span>
-    </div>
-
-    <a href="#" role="button"
-                class="dismiss"
-                [innerHTML]="closeSvg"
-                (click)="dismiss($event)"></a>
-  </div>
-`,
   styles: [`
     a {
       color: #bbb;
@@ -99,7 +81,7 @@ import { closeIcon } from './icons';
       box-sizing: border-box;
       padding: 10px 60px 10px 10px;
     }
-    .copy strong {
+    .copy span {
       color: #fff;
       font-weight: 400;
     }
@@ -126,7 +108,28 @@ import { closeIcon } from './icons';
         height: 24px;
       }
     }
-  `]
+  `],
+  template: `
+  <div class="cookie-law-wrapper"
+       *ngIf="!cookieLawSeen"
+       [@state]="cookieLawSeen">
+
+    <div class="copy">
+      <span #ref><ng-content></ng-content></span>
+
+    <span *ngIf="ref.childNodes.length == 0">
+      By continuing to browse the site, you're agreeing to our use of cookies.
+      <span *ngIf="learnMore">
+        Learn more in our <a [href]="learnMore" [target]="target">privacy policy</a>.
+      </span>
+    </span>
+
+    <a href="#" role="button"
+                class="dismiss"
+                [innerHTML]="closeSvg"
+                (click)="dismiss($event)"></a>
+  </div>
+`,
 })
 export class CookieLawComponent implements OnInit {
   @Input() learnMore: string = null;

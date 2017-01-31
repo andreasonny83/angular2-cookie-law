@@ -87,4 +87,11 @@ describe('CookieLawComponent', () => {
     expect(cookiesPolicyService.seen()).toBe(true);
     expect(el.textContent).not.toContain('COOKIE POLICY');
   });
+
+  it('should render a learn more link', () => {
+    comp.learnMore = 'http://www.google.com';
+
+    fixture.detectChanges();
+    expect(el.textContent).toContain('Learn more');
+  });
 });

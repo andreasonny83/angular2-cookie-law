@@ -2,3 +2,10 @@ node_modules
 config
 coverage
 demo
+
+.coveralls.yml
+.editorconfig
+.travis.yml
+appveyor.yml
+karma.conf.js
+rollup.config.js

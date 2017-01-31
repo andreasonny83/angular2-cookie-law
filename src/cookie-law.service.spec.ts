@@ -17,7 +17,6 @@ describe('CookieLawService', () => {
   });
 
   it('#seen should return a value', () => {
-
     expect(service.seen()).toBe(false);
   });
 

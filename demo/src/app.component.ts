@@ -13,7 +13,7 @@ import { Component } from '@angular/core';
       </a>
     </div>
 
-    <cookie-law></cookie-law>
+    <cookie-law>allo</cookie-law>
   `,
   styles: [`
     a.link {

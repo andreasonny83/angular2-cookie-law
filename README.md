@@ -18,6 +18,7 @@ angular2-cookie-law is an HTML `<cookie-law>` tag enhanced with styling and anim
 *   [Example](#example)
 *   [Demo App](#demo-app)
 *   [Options](#options)
+*   [Custom template](#custom-template)
 *   [Contributing](#contributing)
 *   [Changelog](#changelog)
 *   [License](#license)
@@ -186,6 +187,19 @@ Set to `_self` if you want the external link not to be opened in a new tab.
 eg.
 ```html
 <cookie-law learnMore="/learn-more" target="_self"></cookie-law>
+```
+
+## Custom template
+
+It is possible to overwrite our default cookie policy law text with a
+custom template.
+Just put your favorite html content between the component like in the
+following example:
+```html
+<cookie-law>
+  This website contains cookie.
+  <a =href="#/cookie-policy">Read more</a>
+</cookie-law>
 ```
 
 ## Contributing
