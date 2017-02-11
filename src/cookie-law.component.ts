@@ -23,7 +23,6 @@ import { closeIcon } from './icons';
 
 @Component({
   selector: 'cookie-law',
-  encapsulation: ViewEncapsulation.None,
   animations: [
     trigger('state', [
       state('in', style({ transform: 'translateY(0)' })),
@@ -129,7 +128,7 @@ import { closeIcon } from './icons';
                 [innerHTML]="closeSvg"
                 (click)="dismiss($event)"></a>
   </div>
-`,
+  `
 })
 export class CookieLawComponent implements OnInit {
   @Input() learnMore: string = null;

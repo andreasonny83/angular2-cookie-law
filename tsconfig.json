@@ -7,7 +7,7 @@
     "removeComments": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "lib": ["dom", "es6"],
+    "lib": ["es6", "dom"],
     "sourceMap": true,
     "pretty": true,
     "allowUnreachableCode": false,
@@ -16,9 +16,6 @@
     "noImplicitReturns": true,
     "noImplicitUseStrict": false,
     "noFallthroughCasesInSwitch": true,
-    "typeRoots": [
-      "node_modules/@types"
-    ],
     "types": [
       "jasmine",
       "node",
@@ -30,7 +27,8 @@
   },
   "exclude": [
     "node_modules",
-    "demo"
+    "demo",
+    "lib"
   ],
   "awesomeTypescriptLoaderOptions": {
     "forkChecker": true,
