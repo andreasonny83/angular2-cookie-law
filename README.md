@@ -29,13 +29,13 @@ angular2-cookie-law is an HTML `<cookie-law>` tag enhanced with styling and anim
 
   ```bash
   # To get the latest stable version and update package.json file:
-  npm install angular2-cookie-law --save
+  $ npm install angular2-cookie-law --save
   ```
 
   or `yarn` with:
 
   ```bash
-  yarn add angular2-cookie-law
+  $ yarn add angular2-cookie-law
   ```
 
 ## Setup
@@ -140,18 +140,19 @@ available in this repository for a real Angular2 application using the `Angular2
 From your terminal, navigate inside the `demo` folder, then install all the Node dependencies using npm:
 
 ```bash
-npm install
+$ cd demo
+$ npm install
 ```
 Or Yarn with:
 
 ```bash
-yarn install
+$ yarn install
 ```
 
 Then initialize the application with:
 
 ```bash
-npm start
+$ npm start
 ```
 
 Open your browser to [http://localhost:9008/](http://localhost:9008/)

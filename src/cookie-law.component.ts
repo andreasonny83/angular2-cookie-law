@@ -135,7 +135,8 @@ export class CookieLawComponent implements OnInit {
   @Input() learnMore: string = null;
   @Input() target: string = '_blank';
 
-  private cookieLawSeen: boolean = true;
+  cookieLawSeen: boolean = true;
+
   private closeSvg: SafeHtml;
 
   constructor(

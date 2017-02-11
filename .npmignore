@@ -1,11 +1,17 @@
+# common
 node_modules
 config
 coverage
 demo
+*.log
+.DS_Store
+.nyc_output
+.test
+.tmp
 
-.coveralls.yml
-.editorconfig
-.travis.yml
-appveyor.yml
+# source/config
+src
 karma.conf.js
 rollup.config.js
+*.yml
+.gitignore

@@ -21,14 +21,14 @@ describe('CookieLawService', () => {
   });
 
   it('#seen should read a cookie', () => {
-    let seenSpy = spyOn(service, 'cookieExisits');
+    const seenSpy = spyOn(service, 'cookieExisits');
 
     service.seen();
     expect(seenSpy).toHaveBeenCalled();
   });
 
   it('#storeCookie should store a cookie', () => {
-    let setCookieSpy = spyOn(service, 'setCookie');
+    const setCookieSpy = spyOn(service, 'setCookie');
 
     service.storeCookie();
 

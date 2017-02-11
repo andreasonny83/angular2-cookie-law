@@ -2,4 +2,4 @@
 function __export(m) {
     for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
 }
-__export(require("./src/cookie-law.module"));
+__export(require("./lib/cookie-law.module"));
