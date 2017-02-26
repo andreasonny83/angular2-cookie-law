@@ -14,7 +14,6 @@ const path = require('path');
  */
 const ProvidePlugin = require('webpack/lib/ProvidePlugin');
 const DefinePlugin = require('webpack/lib/DefinePlugin');
-const LoaderOptionsPlugin = require('webpack/lib/LoaderOptionsPlugin');
 const ContextReplacementPlugin = require('webpack/lib/ContextReplacementPlugin');
 
 const ENV = process.env.ENV = process.env.NODE_ENV = 'test';
@@ -51,7 +50,7 @@ module.exports = function (options) {
         use: [
           {
             loader: 'awesome-typescript-loader',
-            query: {
+            options: {
               sourceMap: false,
               inlineSourceMap: true,
               compilerOptions: {
@@ -59,26 +58,22 @@ module.exports = function (options) {
               }
             }
           },
-          'angular2-template-loader'
+          {
+            loader: 'angular2-template-loader'
+          }
         ],
         exclude: [/\.e2e\.ts$/]
       },
 
       {
-        test: /\.css$/,
+        test: /\.(css|html)$/,
         loader: 'raw-loader'
-      },
-
-      {
-        test: /\.html$/,
-        loader: 'raw-loader',
-        exclude: [helpers.root('src/index.html')]
       },
 
       {
         enforce: 'post',
         test: /\.(js|ts)$/,
-        loader: 'istanbul-instrumenter-loader',
+        use: 'istanbul-instrumenter-loader?esModules=true',
         include: helpers.root('src'),
         exclude: [
           /\.(e2e|spec)\.ts$/,
@@ -102,11 +97,6 @@ module.exports = function (options) {
       helpers.root('src'), // location of your src
       { }
      ),
-
-    new LoaderOptionsPlugin({
-      debug: true,
-      options: {}
-    }),
   ],
 
   node: {

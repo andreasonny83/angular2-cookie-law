@@ -13,12 +13,14 @@ import { Component } from '@angular/core';
       </a>
     </div>
 
-    <cookie-law>
+    <cookie-law position="top">
       Allo! This is my awesome cookie-law message.
       <a href="https://github.com/andreasonny83/angular2-cookie-law">
         Click here for more info
       </a>
     </cookie-law>
+
+    <cookie-law learnMore="/false" target="_blank"></cookie-law>
   `,
   styles: [`
     a.link {

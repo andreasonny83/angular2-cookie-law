@@ -14,10 +14,10 @@ before_script:
 script:
   - npm run lint
   - npm run test:headless
-  - npm run coveralls
-  - npm run build_prod
 
 after_success:
+  - npm run coveralls
+  - npm run build_prod
   - npm run semantic-release
 
 branches:

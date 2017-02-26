@@ -1,21 +1,28 @@
 {
   "compilerOptions": {
+    "baseUrl": ".",
     "target": "es5",
-    "module": "commonjs",
+    "module": "es2015",
     "moduleResolution": "node",
     "declaration": true,
     "removeComments": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "lib": ["es6", "dom"],
+    "noUnusedLocals": true,
+    "lib": [
+      "es2015",
+      "dom"
+    ],
     "sourceMap": true,
-    "pretty": true,
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,
     "noImplicitAny": false,
     "noImplicitReturns": true,
     "noImplicitUseStrict": false,
     "noFallthroughCasesInSwitch": true,
+    "typeRoots": [
+      "node_modules/@types"
+    ],
     "types": [
       "jasmine",
       "node",
@@ -25,10 +32,13 @@
       "webpack"
     ]
   },
+  "files": [
+    "index.ts"
+  ],
   "exclude": [
     "node_modules",
     "demo",
-    "lib"
+    "bundle"
   ],
   "awesomeTypescriptLoaderOptions": {
     "forkChecker": true,

@@ -6,7 +6,7 @@
  * @author: @andreasonny83 <andreasonny83@gmail.com>
  */
 
-import { Injectable, EventEmitter } from '@angular/core';
+import { Injectable } from '@angular/core';
 
 @Injectable()
 export class CookieLawService {

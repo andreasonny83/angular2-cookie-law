@@ -2,28 +2,28 @@
   "name": "angular2-cookie-law",
   "version": "0.0.0-development",
   "description": "Angular2 component that provides a banner to inform users about cookie law",
-  "main": "index.js",
   "scripts": {
-    "build": "tsc -p tsconfig-tsc.json",
-    "build_prod": "npm run clean && npm run inline && npm run ngc && npm run build && npm run rollup",
-    "clean": "rm -rf lib && mkdir lib",
+    "build": "webpack --config config/webpack.lib.js",
+    "build_prod": "npm run ngc && npm run build",
     "commit": "git-cz",
     "coveralls": "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls",
-    "inline": "ng2-inline -o lib -f -b src src/**/*.ts",
-    "lint": "tslint -c tslint.json src/**/*.ts",
-    "ngc": "ngc -p tsconfig-ngc.json",
+    "demo": "webpack-dev-server --inline --progress --open --port 9007 --config config/webpack.demo.js --content-base demo",
+    "lint": "tslint \"src/**/*.ts\" -e \"src/**/*.d.ts\"",
+    "ngc": "ngc -p tsconfig.json",
     "precommit": "npm run lint && npm run test:headless",
-    "rollup": "rollup -c",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post",
-    "test:headless": "karma start --browsers PhantomJS",
-    "test": "karma start"
+    "test:headless": "karma start config/karma.conf.js --browsers PhantomJS",
+    "test": "karma start config/karma.conf.js"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/andreasonny83/angular2-cookie-law.git"
   },
   "keywords": [
+    "ng2",
+    "angular",
     "angular2",
+    "angular2-component",
     "cookie",
     "cookie-law"
   ],
@@ -32,10 +32,15 @@
   "bugs": {
     "url": "https://github.com/andreasonny83/angular2-cookie-law/issues"
   },
+  "main": "bundles/angular2-cookie-law.umd.js",
+  "module": "index.js",
+  "typings": "index.d.ts",
   "homepage": "https://github.com/andreasonny83/angular2-cookie-law#readme",
   "peerDependencies": {
+    "@angular/common": "^2.0.0",
     "@angular/core": "^2.0.0"
   },
+  "module": "index.js",
   "devDependencies": {
     "@angular/common": "2.4.7",
     "@angular/compiler": "2.4.7",
@@ -48,7 +53,6 @@
     "@types/selenium-webdriver": "2.53.39",
     "@types/source-map": "0.5.0",
     "@types/webpack": "2.2.5",
-    "angular2-inline-template-style": "1.0.0",
     "angular2-template-loader": "0.6.2",
     "awesome-typescript-loader": "3.0.4-rc.2",
     "codelyzer": "2.0.0",
@@ -69,10 +73,6 @@
     "karma-sourcemap-loader": "0.3.7",
     "karma-webpack": "2.0.2",
     "raw-loader": "0.5.1",
-    "rollup": "0.41.4",
-    "rollup-plugin-angular": "0.4.4",
-    "rollup-plugin-sourcemaps": "0.4.1",
-    "rollup-plugin-typescript": "0.8.1",
     "rxjs": "5.1.0",
     "semantic-release": "6.3.2",
     "source-map-loader": "0.1.6",
@@ -80,6 +80,7 @@
     "tslint": "4.4.2",
     "typescript": "2.1.6",
     "webpack": "2.2.1",
+    "webpack-dev-server": "2.4.1",
     "zone.js": "0.7.6"
   },
   "config": {

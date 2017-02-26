@@ -1,17 +1,18 @@
-# common
+# OS generated files
+Thumbs.db
+.DS_Store
+
+# Node generated files
 node_modules
+*.log
+*.yml
+
+# Ignored files
 config
 coverage
 demo
-*.log
-.DS_Store
+src
 .nyc_output
 .test
 .tmp
-
-# source/config
-src
-karma.conf.js
-rollup.config.js
-*.yml
 .gitignore

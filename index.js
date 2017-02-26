@@ -1,5 +1,2 @@
-"use strict";
-function __export(m) {
-    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
-}
-__export(require("./lib/cookie-law.module"));
+export * from './src/cookie-law.module';
+//# sourceMappingURL=index.js.map
