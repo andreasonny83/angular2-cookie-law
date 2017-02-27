@@ -4,10 +4,11 @@
   "description": "Angular2 component that provides a banner to inform users about cookie law",
   "scripts": {
     "build": "webpack --config config/webpack.lib.js",
-    "build_prod": "npm run ngc && npm run build",
+    "build_prod": "npm run inline && npm run ngc && npm run build",
     "commit": "git-cz",
     "coveralls": "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls",
     "demo": "webpack-dev-server --inline --progress --open --port 9007 --config config/webpack.demo.js --content-base demo",
+    "inline": "ng2-inline -o lib -f -b src src/**/*.ts",
     "lint": "tslint \"src/**/*.ts\" -e \"src/**/*.d.ts\"",
     "ngc": "ngc -p tsconfig.json",
     "precommit": "npm run lint && npm run test:headless",
@@ -40,7 +41,6 @@
     "@angular/common": "^2.0.0",
     "@angular/core": "^2.0.0"
   },
-  "module": "index.js",
   "devDependencies": {
     "@angular/common": "2.4.7",
     "@angular/compiler": "2.4.7",
@@ -53,6 +53,7 @@
     "@types/selenium-webdriver": "2.53.39",
     "@types/source-map": "0.5.0",
     "@types/webpack": "2.2.5",
+    "angular2-inline-template-style": "1.0.2",
     "angular2-template-loader": "0.6.2",
     "awesome-typescript-loader": "3.0.4-rc.2",
     "codelyzer": "2.0.0",

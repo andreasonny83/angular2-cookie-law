@@ -1,2 +1,2 @@
-export * from './src/cookie-law.module';
+export * from './lib/cookie-law.module';
 //# sourceMappingURL=index.js.map

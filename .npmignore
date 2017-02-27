@@ -8,6 +8,7 @@ node_modules
 *.yml
 
 # Ignored files
+src
 config
 coverage
 demo
