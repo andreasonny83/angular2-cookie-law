@@ -43,6 +43,7 @@ module.exports = {
     externals: {
       '@angular/core': ngExternal('core'),
       '@angular/common': ngExternal('common'),
+      '@angular/platform-browser': ngExternal('platform-browser'),
     },
 
     module: {

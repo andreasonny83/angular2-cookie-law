@@ -16,3 +16,5 @@ demo
 .test
 .tmp
 .gitignore
+*.ts
+!*.d.ts
