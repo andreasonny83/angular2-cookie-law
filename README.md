@@ -47,13 +47,7 @@ If you are using System.js you may want to add this into `map` and `package` con
 ```json
 {
   "map": {
-      "angular2-cookie-law": "node_modules/angular2-cookie-law"
-  },
-  "packages": {
-      "angular2-cookie-law": {
-        "main": "bundles/angular2-cookie-law.umd.js",
-        "defaultExtension": "js"
-      }
+      "angular2-cookie-law": "node_modules/angular2-cookie-law/bundles/angular2-cookie-law.umd.js"
   }
 }
 ```
