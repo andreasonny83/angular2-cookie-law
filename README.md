@@ -12,7 +12,7 @@
 
 angular2-cookie-law is an HTML `<cookie-law>` tag enhanced with styling and animation
 
-Plunker DEMO available [here](https://plnkr.co/edit/QgrOeg?p=preview)
+Plunker DEMO available [here](https://embed.plnkr.co/QgrOeg/tt)
 
 ## Table of contents
 
