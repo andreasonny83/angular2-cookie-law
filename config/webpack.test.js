@@ -47,7 +47,7 @@ module.exports = function (options) {
         exclude: [
           // these packages have problems with their sourcemaps
           helpers.root('node_modules/rxjs'),
-          helpers.root('node_modules/@angular')
+          helpers.root('node_modules/@angular'),
         ]
       },
 
@@ -57,6 +57,7 @@ module.exports = function (options) {
           {
             loader: 'awesome-typescript-loader',
             options: {
+              configFileName: helpers.root('src/tsconfig.json'),
               sourceMap: false,
               inlineSourceMap: true,
               compilerOptions: {
@@ -68,7 +69,9 @@ module.exports = function (options) {
             loader: 'angular2-template-loader'
           }
         ],
-        exclude: [/\.e2e\.ts$/]
+        exclude: [
+          /\.e2e\.ts$/
+        ]
       },
 
       {
