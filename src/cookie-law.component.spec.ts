@@ -49,11 +49,11 @@ describe('CookieLawComponent', () => {
 
   // synchronous beforeEach
   beforeEach(() => {
-    fixture = TestBed.createComponent(CookieLawComponent);
-    comp = fixture.componentInstance; // CookieLawComponent test instance
-
     // CookieLawService from the root injector
     cookiesPolicyService = TestBed.get(CookieLawService);
+
+    fixture = TestBed.createComponent(CookieLawComponent);
+    comp = fixture.componentInstance; // CookieLawComponent test instance
 
     // query for the element by CSS element selector
     de = fixture.debugElement;
@@ -67,7 +67,7 @@ describe('CookieLawComponent', () => {
     expect(el.textContent).toContain('By continuing to browse the site, you\'re agreeing to our use of cookies.');
   });
 
-  it('dismiss the notification', () => {
+  it('dismiss the notification with mouse interaction', () => {
     fixture.detectChanges();
 
     expect(cookiesPolicyService.seen()).toBe(false);
@@ -79,13 +79,35 @@ describe('CookieLawComponent', () => {
     expect(el.textContent).not.toContain('COOKIE POLICY');
   });
 
+  it('dismiss the notification invoking the `dismiss` method', () => {
+    fixture.detectChanges();
+
+    expect(cookiesPolicyService.seen()).toBe(false);
+
+    comp.dismiss();
+    fixture.detectChanges();
+
+    expect(cookiesPolicyService.seen()).toBe(true);
+  });
+
   it('should hide the cookie policy notification', () => {
     cookiesPolicyService._seen = true;
+    fixture.detectChanges();
+
+    expect(cookiesPolicyService.seen()).toBe(true);
+
+    expect(el.textContent).not.toContain('COOKIE POLICY');
+  });
+
+  it('cookieLawSeen should reflects cookiesPolicyService.seen', () => {
+    expect(cookiesPolicyService.seen()).toBe(false);
+
+    comp.dismiss();
 
     fixture.detectChanges();
 
     expect(cookiesPolicyService.seen()).toBe(true);
-    expect(el.textContent).not.toContain('COOKIE POLICY');
+    expect(comp.cookieLawSeen).toBe(true);
   });
 
   it('should render a learn more link', () => {

@@ -1,8 +1,8 @@
 <div class="cookie-law-wrapper"
     [ngStyle]="currentStyles"
-     *ngIf="!cookieLawSeen"
-     [@state]="animation"
-     (@state.done)="afterDismissAnimation($event)">
+    *ngIf="!cookieLawSeen"
+    [@state]="animation"
+    (@state.done)="afterDismissAnimation($event)">
 
   <div class="copy">
     <span #ref><ng-content></ng-content></span>

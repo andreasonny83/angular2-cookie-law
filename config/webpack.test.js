@@ -23,13 +23,19 @@ const ENV = process.env.ENV = process.env.NODE_ENV = 'test';
  *
  * See: http://webpack.github.io/docs/configuration.html#cli
  */
+process.noDeprecation = true;
+
 module.exports = function (options) {
   return {
 
     devtool: 'inline-source-map',
+
     resolve: {
       extensions: ['.ts', '.js'],
-      modules: [helpers.root('src'), 'node_modules']
+      modules: [
+      helpers.root('node_modules'),
+      helpers.root('src'),
+    ]
   },
 
   module: {
@@ -73,7 +79,14 @@ module.exports = function (options) {
       {
         enforce: 'post',
         test: /\.(js|ts)$/,
-        use: 'istanbul-instrumenter-loader?esModules=true',
+        use: [
+          {
+            loader: 'istanbul-instrumenter-loader',
+            options: {
+              esModules: true,
+            }
+          }
+        ],
         include: helpers.root('src'),
         exclude: [
           /\.(e2e|spec)\.ts$/,

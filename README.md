@@ -21,7 +21,11 @@ Plunker DEMO available [here](https://embed.plnkr.co/QgrOeg/tt)
 *   [Usage](#usage)
 *   [Example](#example)
 *   [Demo App](#demo-app)
-*   [Options](#options)
+*   Options
+  *   [Attributes](#attributes)
+  *   [Properties](#properties)
+  *   [Events](#events)
+  *   [Methods](#methods)
 *   [Custom template](#custom-template)
 *   [Contributing](#contributing)
 *   [Changelog](#changelog)
@@ -126,7 +130,7 @@ import { Component } from '@angular/core';
 export class AppComponent  { }
 ```
 
-#### Output
+###### Output
 
 ![cookie-law example](http://i.imgur.com/W9LUdwy.png)
 
@@ -144,6 +148,8 @@ to see the application running.
 
 ## Options
 
+## Attributes
+
 ### learnMore
 
 | Type | Default value
@@ -157,7 +163,7 @@ eg.
 <cookie-law learnMore="/learn-more"></cookie-law>
 ```
 
-#### Output
+###### Output
 
 ![output with link](http://i.imgur.com/0nvb6sP.png)
 
@@ -169,7 +175,8 @@ eg.
 
 Set to `_self` if you want the external link not to be opened in a new tab.
 
-eg.
+###### Example
+
 ```html
 <cookie-law learnMore="/learn-more" target="_self"></cookie-law>
 ```
@@ -182,6 +189,94 @@ eg.
 
 Allows you to decide where in the page, the banner will be rendered.
 Possible values are: `"bottom"` and `"top"`.
+
+###### Example
+
+```html
+<cookie-law position="top" learnMore="/learn-more" target="_self"></cookie-law>
+```
+
+## Properties
+
+| Name | Type | Description |
+| cookieLawSeen | boolean | true if the user has already dismissed the banner
+
+###### Example
+
+```js
+@Component({
+  selector: 'demo-app',
+  template: `
+    <h3 *ngIf="cookieLawSeen">Cookie law has been dismissed</h3>
+
+    <cookie-law #cookieLaw></cookie-law>
+
+  `,
+})
+export class AppComponent implements OnInit {
+  @ViewChild('cookieLaw')
+  private cookieLawEl: any;
+
+  private cookieLawSeen: boolean;
+
+  ngOnInit() {
+    this.cookieLawSeen = this.cookieLawEl.cookieLawSeen;
+  }
+}
+```
+
+## Events
+
+| Name | Type | Description |
+| --- | --- | --- |
+| isSeen | boolean | Triggered when the user dismiss the banner
+
+###### Example
+
+```js
+@Component({
+  selector: 'demo-app',
+  template: `
+    <h3 *ngIf="cookieLawSeen">Cookie law has been dismissed</h3>
+
+    <cookie-law (isSeen)="seen($event)"></cookie-law>
+  `,
+})
+export class AppComponent {
+  private cookieLawSeen: boolean;
+
+  public seen(evt: any) {
+    this.cookieLawSeen = evt;
+  }
+}
+```
+
+## Methods
+
+| Name | Description |
+| --- | --- | --- |
+| dismiss | Dismiss a banner
+
+###### Example
+
+```js
+@Component({
+  selector: 'demo-app',
+  template: `
+  <button type="button" (click)="dismiss()">Dismiss Modal</button>
+  <cookie-law #cookieLaw></cookie-law>
+
+  `,
+})
+export class AppComponent implements OnInit {
+  @ViewChild('cookieLaw')
+  private cookieLawEl: any;
+
+  public dismiss(): void {
+    this.cookieLawEl.dismiss();
+  }
+}
+```
 
 ## Custom template
 
