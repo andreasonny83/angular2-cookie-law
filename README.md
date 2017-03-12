@@ -1,7 +1,7 @@
 [![Build Status](https://travis-ci.org/andreasonny83/angular2-cookie-law.svg?branch=master)](https://travis-ci.org/andreasonny83/angular2-cookie-law)
 [![Build status](https://ci.appveyor.com/api/projects/status/gy65rk7l0nln23nj?svg=true)](https://ci.appveyor.com/project/andreasonny83/angular2-cookie-law)
 [![npm version](https://badge.fury.io/js/angular2-cookie-law.svg)](https://badge.fury.io/js/angular2-cookie-law)
-[![npm](https://img.shields.io/npm/dm/angular2-cookie-law.svg)](https://www.npmjs.com/package/angular2-cookie-law)
+[![npm](https://img.shields.io/npm/dt/angular2-cookie-law.svg)](https://www.npmjs.com/package/angular2-cookie-law)
 [![Coverage Status](https://coveralls.io/repos/github/andreasonny83/angular2-cookie-law/badge.svg)](https://coveralls.io/github/andreasonny83/angular2-cookie-law)
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
