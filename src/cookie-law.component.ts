@@ -35,9 +35,9 @@ import {
   closeIcon,
 } from './icons';
 
-type CookieLawPosition = 'top' | 'bottom';
-type CookieLawAnimation = 'topIn' | 'bottomIn' | 'topOut' | 'bottomOut';
-type CookieLawTarget = '_blank' | '_self';
+export type CookieLawPosition = 'top' | 'bottom';
+export type CookieLawAnimation = 'topIn' | 'bottomIn' | 'topOut' | 'bottomOut';
+export type CookieLawTarget = '_blank' | '_self';
 
 @Component({
   selector: 'cookie-law',
