@@ -109,6 +109,7 @@ export class CookieLawComponent implements OnInit {
     this.isSeenEvt = new EventEmitter<boolean>();
     this.animation = 'topIn';
     this._position = 'bottom';
+    this.cookieLawSeen = this._service.seen();
   }
 
   ngOnInit(): void {
@@ -116,7 +117,6 @@ export class CookieLawComponent implements OnInit {
 
     this.closeSvg = this.domSanitizer.bypassSecurityTrustHtml(closeIcon);
 
-    this.cookieLawSeen = this._service.seen();
     if (this.cookieLawSeen) {
       this.isSeen = true;
     }

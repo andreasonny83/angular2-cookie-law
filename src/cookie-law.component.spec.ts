@@ -103,11 +103,9 @@ describe('CookieLawComponent', () => {
     expect(cookiesPolicyService.seen()).toBe(false);
 
     comp.dismiss();
-
     fixture.detectChanges();
 
     expect(cookiesPolicyService.seen()).toBe(true);
-    expect(comp.cookieLawSeen).toBe(true);
   });
 
   it('should render a learn more link', () => {
