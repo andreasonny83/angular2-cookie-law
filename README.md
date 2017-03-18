@@ -16,20 +16,20 @@ Plunker DEMO available [here](https://embed.plnkr.co/QgrOeg/tt)
 
 ## Table of contents
 
-*   [Installation](#installation)
-*   [Setup](#setup)
-*   [Usage](#usage)
-*   [Example](#example)
-*   [Demo App](#demo-app)
-*   [Options](#options)
-* *   [Attributes](#attributes)
-* *   [Properties](#properties)
-* *   [Events](#events)
-* *   [Methods](#methods)
-*   [Custom template](#custom-template)
-*   [Contributing](#contributing)
-*   [Changelog](#changelog)
-*   [License](#license)
+* [Installation](#installation)
+* [Setup](#setup)
+* [Usage](#usage)
+* [Example](#example)
+* [Demo App](#demo-app)
+* [Options](#options)
+  * [Attributes](#attributes)
+  * [Properties](#properties)
+  * [Events](#events)
+  * [Methods](#methods)
+* [Custom template](#custom-template)
+* [Contributing](#contributing)
+* [Changelog](#changelog)
+* [License](#license)
 
 ## Installation
 
@@ -152,7 +152,7 @@ to see the application running.
 
 ### learnMore
 
-| Type | Default value
+| Type | Default value |
 | --- | --- |
 | string | null |
 
@@ -169,7 +169,7 @@ eg.
 
 ### target
 
-| Type | Default value
+| Type | Default value |
 | --- | --- |
 | string | _blank |
 
@@ -183,7 +183,7 @@ Set to `_self` if you want the external link not to be opened in a new tab.
 
 ### position
 
-| Type | Default value
+| Type | Default value |
 | --- | --- |
 | string | "bottom" |
 
@@ -199,7 +199,8 @@ Possible values are: `"bottom"` and `"top"`.
 ## Properties
 
 | Name | Type | Description |
-| cookieLawSeen | boolean | true if the user has already dismissed the banner
+| --- | --- | --- |
+| cookieLawSeen | boolean | true if the user has already dismissed the banner |
 
 ###### Example
 
@@ -229,7 +230,7 @@ export class AppComponent implements OnInit {
 
 | Name | Type | Description |
 | --- | --- | --- |
-| isSeen | boolean | Triggered when the user dismiss the banner
+| isSeen | boolean | Triggered when the user dismiss the banner |
 
 ###### Example
 
@@ -254,8 +255,8 @@ export class AppComponent {
 ## Methods
 
 | Name | Description |
-| --- | --- | --- |
-| dismiss | Dismiss a banner
+| --- | --- |
+| dismiss | Dismiss a banner |
 
 ###### Example
 
