@@ -12,14 +12,9 @@ coverage
 # Ignored files
 bundles
 lib
-src/*.d.ts
-src/*.js
-index.d.ts
-index.js
+*.d.ts
 *.map
+/*.js
 
 # @angular/compiler-cli
-*.metadata.*
-*.ngsummary.*
-*.ngfactory.*
-*.ngstyle.*
+/index.*.json

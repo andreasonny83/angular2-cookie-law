@@ -11,7 +11,6 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class CookieLawService {
 
-
   seen(): boolean {
     return this.cookieExisits('cookieLawSeen');
   }

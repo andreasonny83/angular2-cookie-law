@@ -14,13 +14,16 @@ import {
   Input,
   Output,
   EventEmitter,
-  animate,
-  state,
-  trigger,
-  style,
-  transition,
   AnimationTransitionEvent,
 } from '@angular/core';
+
+import {
+  trigger,
+  state,
+  style,
+  animate,
+  transition,
+} from '@angular/animations';
 
 import {
   DomSanitizer,
@@ -65,7 +68,10 @@ export type CookieLawTarget = '_blank' | '_self';
   templateUrl: './cookie-law.html',
 })
 export class CookieLawComponent implements OnInit {
-  public cookieLawSeen: boolean;
+  animation: CookieLawAnimation;
+  closeSvg: SafeHtml;
+  cookieLawSeen: boolean;
+  currentStyles: any;
 
   @Input('learnMore')
   get learnMore() { return this._learnMore; }
@@ -89,15 +95,9 @@ export class CookieLawComponent implements OnInit {
                      ) ? value : 'bottom';
   }
 
-  @Output('isSeen')
-  private isSeenEvt: EventEmitter<boolean>;
+  @Output() isSeen = new EventEmitter<boolean>();
 
   @HostBinding('attr.seen')
-  private isSeen: boolean;
-
-  private animation: CookieLawAnimation;
-  private closeSvg: SafeHtml;
-  private currentStyles: {};
   private _learnMore: string;
   private _target: CookieLawTarget;
   private _position: CookieLawPosition;
@@ -106,7 +106,6 @@ export class CookieLawComponent implements OnInit {
     private _service: CookieLawService,
     private domSanitizer: DomSanitizer,
   ) {
-    this.isSeenEvt = new EventEmitter<boolean>();
     this.animation = 'topIn';
     this._position = 'bottom';
     this.cookieLawSeen = this._service.seen();
@@ -118,7 +117,7 @@ export class CookieLawComponent implements OnInit {
     this.closeSvg = this.domSanitizer.bypassSecurityTrustHtml(closeIcon);
 
     if (this.cookieLawSeen) {
-      this.isSeen = true;
+      this.isSeen.emit(true);
     }
 
     this.currentStyles = {
@@ -130,12 +129,11 @@ export class CookieLawComponent implements OnInit {
   afterDismissAnimation(evt: AnimationTransitionEvent) {
     if (evt.toState === 'topOut' ||
         evt.toState === 'bottomOut') {
-      this.isSeen = true;
-      this.isSeenEvt.emit(this.isSeen);
+      this.isSeen.emit(true);
     }
   }
 
-  public dismiss(evt?: MouseEvent): void {
+  dismiss(evt?: MouseEvent): void {
     if (evt) {
       evt.preventDefault();
     }
