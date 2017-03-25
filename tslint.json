@@ -1,30 +1,24 @@
 {
-  "rules": {
-    "class-name": true,
-    "curly": false,
-    "eofline": true,
-    "indent": "spaces",
-    "member-ordering": [true,
-      "public-before-private",
-      "static-before-instance",
-      "variables-before-functions"
-    ],
-    "no-arg": true,
-    "no-construct": true,
-    "no-duplicate-variable": true,
-    "no-eval": true,
-    "no-trailing-whitespace": true,
-    "no-unused-expression": true,
-    "no-use-before-declare": true,
-    "one-line": [true,
-      "check-open-brace",
-      "check-catch",
-      "check-else",
-      "check-whitespace"
-    ],
-    "quotemark": [true, "single"],
-    "semicolon": true,
-    "triple-equals": true,
-    "variable-name": false
+  "rulesDirectory": [
+    "node_modules/codelyzer"
+  ],
+  "rules":{
+    "directive-selector": [true, "attribute", "sg", "camelCase"],
+    "component-selector": [true, "element", "cookie", "kebab-case"],
+    "use-input-property-decorator": true,
+    "use-output-property-decorator": true,
+    "use-host-property-decorator": true,
+    "no-attribute-parameter-decorator": true,
+    "no-input-rename": true,
+    "no-output-rename": true,
+    "no-forward-ref": true,
+    "use-life-cycle-interface": true,
+    "use-pipe-transform-interface": true,
+    "pipe-naming": [true, "camelCase", "sg"],
+    "component-class-suffix": true,
+    "directive-class-suffix": true,
+    "templates-use-public": true,
+    "no-access-missing-member": true,
+    "invoke-injectable": true
   }
 }

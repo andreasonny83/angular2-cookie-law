@@ -6,11 +6,12 @@
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
 
-# angular2-cookie-law
+# Angular2 Cookie Law
 
-> Angular2 component that provides a banner to inform users about the cookie law
+> Angular2+ component that provides a banner to inform users about the cookie law
 
-angular2-cookie-law is an HTML `<cookie-law>` tag enhanced with styling and animation
+Angular2 Cookie Law is an HTML `<cookie-law>` tag enhanced with styling and animation
+now compatible with Angular4 too.
 
 Plunker DEMO available [here](https://embed.plnkr.co/QgrOeg/tt)
 
@@ -78,10 +79,10 @@ it needs to be registered in the modules array (encouraged way):
 
 ```js
 // app.module.ts
-import { NgModule }            from '@angular/core';
-import { BrowserModule }       from '@angular/platform-browser';
-import { CookieLawModule }     from 'angular2-cookie-law';
-import { AppComponent }        from './app.component';
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { CookieLawModule } from 'angular2-cookie-law';
+import { AppComponent } from './app.component';
 
 @NgModule({
   declarations: [ AppComponent ],

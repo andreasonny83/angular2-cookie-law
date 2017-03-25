@@ -6,19 +6,25 @@
  * @author: @andreasonny83 <andreasonny83@gmail.com>
  */
 
-import { ComponentFixture,
-         TestBed, async }        from '@angular/core/testing';
-import { By }                    from '@angular/platform-browser';
-import { DebugElement }          from '@angular/core';
+import {
+  ComponentFixture,
+  TestBed,
+  async,
+} from '@angular/core/testing';
+import { By } from '@angular/platform-browser';
+import { DebugElement } from '@angular/core';
 
-import { CookieLawComponent }    from './cookie-law.component';
-import { CookieLawService }      from './cookie-law.service';
+import {
+  CookieLawModule,
+  CookieLawComponent,
+} from './cookie-law.module';
+import { CookieLawService } from './cookie-law.service';
 
 describe('CookieLawComponent', () => {
-  let comp:    CookieLawComponent;
+  let comp: CookieLawComponent;
   let fixture: ComponentFixture<CookieLawComponent>;
-  let de:      DebugElement;
-  let el:      HTMLElement;
+  let de: DebugElement;
+  let el: HTMLElement;
 
   let cookiesPolicyService: any;
 
@@ -38,11 +44,13 @@ describe('CookieLawComponent', () => {
     };
 
     TestBed.configureTestingModule({
-      declarations: [CookieLawComponent], // declare the test component
-      providers:    [{
+      providers: [{
         provide: CookieLawService,
         useValue: CookieLawServiceStub
-      }]
+      }],
+      imports: [
+        CookieLawModule,
+      ]
     })
     .compileComponents(); // compile template and css
   }));

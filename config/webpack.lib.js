@@ -7,46 +7,60 @@
  */
 
 const helpers = require('./helpers');
-const webpack = require('webpack');
 
-/**
- * Webpack Plugins
- */
 const ProvidePlugin = require('webpack/lib/ProvidePlugin');
 const DefinePlugin = require('webpack/lib/DefinePlugin');
 const LoaderOptionsPlugin = require('webpack/lib/LoaderOptionsPlugin');
 const ContextReplacementPlugin = require('webpack/lib/ContextReplacementPlugin');
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 function ngExternal(ns) {
-    const ng2Ns = `@angular/${ns}`;
-    return { root: ['ng', ns], commonjs: ng2Ns, commonjs2: ng2Ns, amd: ng2Ns };
+
+  const ng2Ns = `@angular/${ns}`;
+
+  return {
+    root: ['ng', ns],
+    commonjs: ng2Ns,
+    commonjs2: ng2Ns,
+    amd: ng2Ns,
+  };
+
 }
 
 module.exports = {
+
     devtool: 'source-map',
 
     resolve: {
-      extensions: ['.ts', '.js']
+
+      extensions: [ '.ts', '.js' ]
+
     },
 
     entry: helpers.root('./index.ts'),
 
     output: {
+
       path: helpers.root('bundles'),
       publicPath: '/',
       filename: 'angular2-cookie-law.umd.js',
       libraryTarget: 'umd',
-      library: 'angular2-cookie-law'
+      library: 'angular2-cookie-law',
+
     },
 
     // require those dependencies but don't bundle them
     externals: {
+
       '@angular/core': ngExternal('core'),
       '@angular/common': ngExternal('common'),
       '@angular/platform-browser': ngExternal('platform-browser'),
+      '@angular/animations': ngExternal('animations'),
+
     },
 
     module: {
+
       rules: [
 
         {
@@ -55,21 +69,21 @@ module.exports = {
             {
               loader: 'awesome-typescript-loader',
               options: {
-                declaration: false
-              }
+                declaration: false,
+              },
             },
             {
-              loader: 'angular2-template-loader'
+              loader: 'angular2-template-loader',
             }
           ],
-          exclude: [/\.e2e\.ts$/]
+          exclude: [ /\.e2e\.ts$/ ]
         },
 
         {
           test: /\.(css|html)?$/,
           use: [
             {
-              loader: 'raw-loader'
+              loader: 'raw-loader',
             },
           ]
         },
@@ -78,9 +92,9 @@ module.exports = {
     },
 
     plugins: [
-      // fix the warning in ./~/@angular/core/src/linker/system_js_ng_module_factory_loader.js
+
       new ContextReplacementPlugin(
-        /angular(\\|\/)core(\\|\/)(esm(\\|\/)src|src)(\\|\/)linker/,
+        /angular(\\|\/)core(\\|\/)@angular/,
         helpers.root('src')
       ),
 
@@ -88,9 +102,14 @@ module.exports = {
         options: {
           tslintLoader: {
             emitErrors: false,
-            failOnHint: false
+            failOnHint: false,
           }
         }
-      })
+      }),
+
+      new UglifyJSPlugin({
+        sourceMap: true
+      }),
+
     ]
 };
