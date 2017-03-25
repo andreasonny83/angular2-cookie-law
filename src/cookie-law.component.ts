@@ -63,6 +63,9 @@ export type CookieLawTarget = '_blank' | '_self';
   ],
   styleUrls: [ './cookie-law.css' ],
   templateUrl: './cookie-law.html',
+  host: {
+    '[class.cookie-law]': 'true'
+  }
 })
 export class CookieLawComponent implements OnInit {
   animation: CookieLawAnimation;
