@@ -8,14 +8,12 @@
 
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CookieLawComponent } from './cookie-law.component';
 import { CookieLawService } from './cookie-law.service';
 
 @NgModule({
   imports: [
     CommonModule,
-    BrowserAnimationsModule,
   ],
   declarations: [
     CookieLawComponent,

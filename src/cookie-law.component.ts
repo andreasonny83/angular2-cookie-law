@@ -15,15 +15,12 @@ import {
   Output,
   EventEmitter,
   AnimationTransitionEvent,
-} from '@angular/core';
-
-import {
   trigger,
   state,
   style,
   animate,
   transition,
-} from '@angular/animations';
+} from '@angular/core';
 
 import {
   DomSanitizer,

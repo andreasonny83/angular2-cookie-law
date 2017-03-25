@@ -55,7 +55,6 @@ module.exports = {
       '@angular/core': ngExternal('core'),
       '@angular/common': ngExternal('common'),
       '@angular/platform-browser': ngExternal('platform-browser'),
-      '@angular/animations': ngExternal('animations'),
 
     },
 
@@ -94,7 +93,7 @@ module.exports = {
     plugins: [
 
       new ContextReplacementPlugin(
-        /angular(\\|\/)core(\\|\/)@angular/,
+        /angular(\\|\/)core(\\|\/)(esm(\\|\/)src|src)(\\|\/)linker/,
         helpers.root('src')
       ),
 

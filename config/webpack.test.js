@@ -106,8 +106,8 @@ module.exports = function (options) {
       }),
 
       new ContextReplacementPlugin(
-        /angular(\\|\/)core(\\|\/)@angular/,
-        helpers.root('src'), // location of your src
+        /angular(\\|\/)core(\\|\/)(esm(\\|\/)src|src)(\\|\/)linker/,
+        helpers.root('src'),
         { }
       ),
 

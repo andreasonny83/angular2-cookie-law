@@ -13,7 +13,10 @@
 Angular2 Cookie Law is an HTML `<cookie-law>` tag enhanced with styling and animation
 now compatible with Angular4 too.
 
-Plunker DEMO available [here](https://embed.plnkr.co/QgrOeg/tt)
+**Plunker DEMOs:**
+
+*   [Angular2 Cookie Law with Angular2](https://embed.plnkr.co/QgrOeg/)
+*   [Angular2 Cookie Law with Angular4](https://embed.plnkr.co/I2M9Ib/)
 
 ## Table of contents
 
@@ -28,6 +31,7 @@ Plunker DEMO available [here](https://embed.plnkr.co/QgrOeg/tt)
   * [Events](#events)
   * [Methods](#methods)
 * [Custom template](#custom-template)
+* [Angular 4](#angular-4)
 * [Contributing](#contributing)
 * [Changelog](#changelog)
 * [License](#license)
@@ -293,10 +297,41 @@ following example:
 </cookie-law>
 ```
 
+## Angular 4
+
+This module will work with Angular 4 projects but will require `@angular/animations`
+to be included in your project as the Angular animations are not part of the `@angular/core`
+library starting from the version >=4.
+
+Make sure to include the `BrowserAnimationsModule` in your App module like in the following example:
+
+```ts
+import { NgModule }           from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { AppComponent }       from './app.component';
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+@NgModule({
+  bootstrap: [ AppComponent ],
+  declarations: [
+    AppComponent,
+  ],
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule, // BrowserAnimationsModule
+  ],
+})
+export class AppModule { }
+```
+
+Also have a look at this [Angular2 Cookie Law with Angular4](https://embed.plnkr.co/I2M9Ib/)
+Plunker version for a live SystemJS example.
+
 ## Contributing
 
 This package is using the AngularJS commit messages as default way to contribute
-with commitizen node package integrated in this repository.
+with Commitizen node package integrated in this repository.
 
 1.  Fork it!
 1.  Create your feature branch: `git checkout -b my-new-feature`

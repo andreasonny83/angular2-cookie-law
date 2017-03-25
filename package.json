@@ -48,16 +48,13 @@
     "@angular/core": ">=2.0.0",
     "@angular/platform-browser": ">=2.0.0"
   },
-  "dependencies": {
-    "@angular/animations": "4.0.0",
-    "@angular/common": "4.0.0",
-    "@angular/compiler": "4.0.0",
-    "@angular/core": "4.0.0",
-    "@angular/platform-browser": "4.0.0",
-    "@angular/platform-browser-dynamic": "4.0.0"
-  },
   "devDependencies": {
-    "@angular/compiler-cli": "4.0.0",
+    "@angular/common": "2.4.7",
+    "@angular/compiler": "2.4.7",
+    "@angular/core": "2.4.7",
+    "@angular/platform-browser": "2.4.7",
+    "@angular/platform-browser-dynamic": "2.4.7",
+    "@angular/compiler-cli": "2.4.7",
     "@types/jasmine": "2.5.46",
     "@types/node": "7.0.5",
     "@types/selenium-webdriver": "2.53.39",
@@ -66,7 +63,7 @@
     "angular2-inline-template-style": "1.0.2",
     "angular2-template-loader": "0.6.2",
     "awesome-typescript-loader": "3.1.2",
-    "codelyzer": "3.0.0-beta.4",
+    "codelyzer": "2.0.1",
     "commitizen": "2.9.6",
     "core-js": "2.4.1",
     "coveralls": "2.12.0",
@@ -94,7 +91,7 @@
     "uglifyjs-webpack-plugin": "0.3.1",
     "webpack": "2.3.2",
     "webpack-dev-server": "2.4.2",
-    "zone.js": "0.8.5"
+    "zone.js": "0.7.2"
   },
   "config": {
     "commitizen": {
