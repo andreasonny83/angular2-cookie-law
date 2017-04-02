@@ -12,20 +12,19 @@ import {
   async,
 } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
-import { DebugElement } from '@angular/core';
+import {
+  DebugElement,
+  Component,
+} from '@angular/core';
 
 import {
   CookieLawModule,
   CookieLawComponent,
+  CookieLawElementComponent,
+  CookieLawService,
 } from './cookie-law.module';
-import { CookieLawService } from './cookie-law.service';
 
 describe('CookieLawComponent', () => {
-  let comp: CookieLawComponent;
-  let fixture: ComponentFixture<CookieLawComponent>;
-  let de: DebugElement;
-  let el: HTMLElement;
-
   let cookiesPolicyService: any;
 
   // async beforeEach
@@ -48,6 +47,11 @@ describe('CookieLawComponent', () => {
         provide: CookieLawService,
         useValue: CookieLawServiceStub
       }],
+      declarations: [
+        SimpleCookieLawComponent,
+        AttributesCookieLawComponent,
+        TwoCookieLawComponent,
+      ],
       imports: [
         CookieLawModule,
       ]
@@ -59,67 +63,233 @@ describe('CookieLawComponent', () => {
   beforeEach(() => {
     // CookieLawService from the root injector
     cookiesPolicyService = TestBed.get(CookieLawService);
-
-    fixture = TestBed.createComponent(CookieLawComponent);
-    comp = fixture.componentInstance; // CookieLawComponent test instance
-
-    // query for the element by CSS element selector
-    de = fixture.debugElement;
-    el = de.nativeElement;
   });
 
   it('should render the cookie policy notification', () => {
+    let fixture: ComponentFixture<CookieLawComponent> = TestBed.createComponent(CookieLawComponent);
+    let comp: CookieLawComponent = fixture.debugElement.componentInstance;
+
     fixture.detectChanges();
 
     expect(cookiesPolicyService.seen()).toBe(false);
-    expect(el.textContent).toContain('By continuing to browse the site, you\'re agreeing to our use of cookies.');
+
+    expect(comp).toBeTruthy();
+    expect(comp).not.toBeNull();
+
+    expect(fixture.debugElement.nativeElement.textContent)
+      .toContain('By continuing to browse the site, you\'re agreeing to our use of cookies.');
   });
 
-  it('dismiss the notification with mouse interaction', () => {
-    fixture.detectChanges();
-
-    expect(cookiesPolicyService.seen()).toBe(false);
-    de.query(By.css('.dismiss')).nativeElement.click();
+  it('CookieLawComponent should have a `seen` attribute', () => {
+    let fixture: ComponentFixture<SimpleCookieLawComponent> = TestBed.createComponent(SimpleCookieLawComponent);
+    let element: DebugElement = fixture.debugElement.query(By.css('cookie-law'));
 
     fixture.detectChanges();
-
-    expect(cookiesPolicyService.seen()).toBe(true);
-    expect(el.textContent).not.toContain('COOKIE POLICY');
+    expect(element.nativeElement.getAttribute('seen')).toBe('false');
   });
 
-  it('dismiss the notification invoking the `dismiss` method', () => {
-    fixture.detectChanges();
+  it('CookieLawComponent should be initially visible', () => {
+    let fixture: ComponentFixture<CookieLawComponent> = TestBed.createComponent(CookieLawComponent);
+    let comp: CookieLawComponent = fixture.debugElement.componentInstance;
 
-    expect(cookiesPolicyService.seen()).toBe(false);
+    fixture.detectChanges();
+    expect(comp.seen).toBe(false);
+    expect(comp.cookieLawSeen()).toBe(false);
+  });
+
+  it('CookieLawComponent should be dismissible', () => {
+    let fixture: ComponentFixture<CookieLawComponent> = TestBed.createComponent(CookieLawComponent);
+    let comp: CookieLawComponent = fixture.debugElement.componentInstance;
+
+    fixture.detectChanges();
+    expect(comp.seen).toBe(false);
 
     comp.dismiss();
+    comp.hasBeenDismissed();
     fixture.detectChanges();
 
-    expect(cookiesPolicyService.seen()).toBe(true);
+    expect(comp.seen).toBe(true);
+    expect(comp.cookieLawSeen()).toBe(true);
   });
 
-  it('should hide the cookie policy notification', () => {
-    cookiesPolicyService._seen = true;
+  it('CookieLawElementComponent should have a bunch of attributes', () => {
+    let fixture: ComponentFixture<CookieLawElementComponent> = TestBed.createComponent(CookieLawElementComponent);
+    let comp: CookieLawElementComponent = fixture.debugElement.componentInstance;
+
     fixture.detectChanges();
 
-    expect(cookiesPolicyService.seen()).toBe(true);
-
-    expect(el.textContent).not.toContain('COOKIE POLICY');
+    expect(comp.animation).toBe('bottomIn')
+    expect(comp.position).toBe('bottom')
+    expect(comp.learnMore).not.toBeDefined();
+    expect(comp.target).not.toBeDefined();
   });
 
-  it('cookieLawSeen should reflects cookiesPolicyService.seen', () => {
-    expect(cookiesPolicyService.seen()).toBe(false);
+  it('CookieLawElementComponent should accept attributes', () => {
+    let fixture: ComponentFixture<AttributesCookieLawComponent> = TestBed.createComponent(AttributesCookieLawComponent);
+    let comp: DebugElement = fixture.debugElement.query(By.css('cookie-law'));
 
-    comp.dismiss();
     fixture.detectChanges();
 
-    expect(cookiesPolicyService.seen()).toBe(true);
+    let el: DebugElement = fixture.debugElement.query(By.css('cookie-law-el'));
+
+    expect(el.nativeElement.textContent)
+      .not.toContain(`Learn more in our privacy policy.`);
+
+    expect(comp.nativeElement.getAttribute('seen')).toBe('false');
+    expect(el.componentInstance.name).not.toBeDefined();
+    expect(el.componentInstance.learnMore).not.toBeDefined();
+    expect(el.componentInstance.target).toBe('_blank');
+    expect(el.componentInstance.position).toBe('bottom');
+    expect(el.componentInstance.animation).toBe('bottomIn');
   });
 
-  it('should render a learn more link', () => {
-    comp.learnMore = 'http://www.google.com';
+  it('CookieLawElementComponent should renders on the top', () => {
+    let fixture: ComponentFixture<AttributesCookieLawComponent> = TestBed.createComponent(AttributesCookieLawComponent);
+    let app: AttributesCookieLawComponent = fixture.debugElement.componentInstance;
+    let comp: DebugElement = fixture.debugElement.query(By.css('cookie-law'));
+
+    app.name = 'myCookie';
+    app.position = 'top';
 
     fixture.detectChanges();
-    expect(el.textContent).toContain('Learn more');
+    let el: DebugElement = fixture.debugElement.query(By.css('cookie-law-el'));
+
+    expect(comp.componentInstance.position).toBe('top');
+    expect(el.componentInstance.position).toBe('top');
+    expect(el.componentInstance.animation).toBe('topIn');
+  });
+
+  it('CookieLawElementComponent learnMore', () => {
+    let fixture: ComponentFixture<AttributesCookieLawComponent> = TestBed.createComponent(AttributesCookieLawComponent);
+    let app: AttributesCookieLawComponent = fixture.debugElement.componentInstance;
+
+    app.learnMore = '/#cookies';
+    app.target = '_self';
+
+    fixture.detectChanges();
+
+    let el: DebugElement = fixture.debugElement.query(By.css('cookie-law-el'));
+
+    expect(el.componentInstance.target).toBe('_self');
+    expect(el.nativeElement.textContent)
+      .toContain(`Learn more in our privacy policy.`);
+
+    app.learnMore = 'false';
+
+    fixture.detectChanges();
+
+    expect(el.componentInstance.learnMore).toBeNull();
+  });
+
+  it('CookieLawElementComponent should dismiss the banner on the bottom', () => {
+    let fixture: ComponentFixture<AttributesCookieLawComponent> = TestBed.createComponent(AttributesCookieLawComponent);
+
+    fixture.detectChanges();
+
+    let el: DebugElement = fixture.debugElement.query(By.css('cookie-law-el'));
+    let comp: CookieLawElementComponent = el.componentInstance;
+
+    let spy = spyOn(comp, 'dismiss').and.callThrough();
+
+    el.query(By.css('.dismiss')).nativeElement.click();
+
+    fixture.detectChanges();
+
+    expect(spy).toHaveBeenCalled();
+  });
+
+  it('CookieLawElementComponent should dismiss the banner on the top', () => {
+    let fixture: ComponentFixture<AttributesCookieLawComponent> = TestBed.createComponent(AttributesCookieLawComponent);
+    let app: AttributesCookieLawComponent = fixture.debugElement.componentInstance;
+
+    app.position = 'top';
+
+    fixture.detectChanges();
+
+    let el: DebugElement = fixture.debugElement.query(By.css('cookie-law-el'));
+    let comp: CookieLawElementComponent = el.componentInstance;
+
+    let spy = spyOn(comp, 'dismiss').and.callThrough();
+
+    el.query(By.css('.dismiss')).nativeElement.click();
+
+    fixture.detectChanges();
+
+    expect(spy).toHaveBeenCalled();
+  });
+
+  it('CookieLawComponent should dismiss the banner using a method', () => {
+    let fixture: ComponentFixture<AttributesCookieLawComponent> = TestBed.createComponent(AttributesCookieLawComponent);
+    let app: AttributesCookieLawComponent = fixture.debugElement.componentInstance;
+
+    app.position = 'top';
+
+    fixture.detectChanges();
+
+    let parent: CookieLawComponent = fixture.debugElement.query(By.css('cookie-law')).componentInstance;
+    let comp: CookieLawElementComponent = fixture.debugElement.query(By.css('cookie-law-el')).componentInstance;
+
+    let spy = spyOn(comp, 'dismiss').and.callThrough();
+
+    parent.dismiss();
+
+    fixture.detectChanges();
+
+    expect(spy).toHaveBeenCalled();
+  });
+
+  it('CookieLawComponent with custom names', () => {
+    let fixture: ComponentFixture<TwoCookieLawComponent> = TestBed.createComponent(TwoCookieLawComponent);
+
+    fixture.detectChanges();
+
+    let cookieB: CookieLawComponent = fixture.debugElement.query(By.css('cookie-law#second')).componentInstance;
+
+    fixture.detectChanges();
+    expect(fixture.nativeElement.querySelectorAll('cookie-law#first .cookie-law').length).toBe(1);
+    expect(fixture.nativeElement.querySelectorAll('cookie-law#second .cookie-law').length).toBe(1);
+
+    cookieB.hasBeenDismissed();
+    fixture.detectChanges();
+
+    expect(fixture.nativeElement.querySelectorAll('cookie-law#first .cookie-law').length).toBe(1);
+    expect(fixture.nativeElement.querySelectorAll('cookie-law#second .cookie-law').length).toBe(0);
   });
 });
+
+@Component({
+  template: `
+    <cookie-law></cookie-law>
+  `
+})
+class SimpleCookieLawComponent { }
+
+@Component({
+  template: `
+    <cookie-law id="first"></cookie-law>
+    <cookie-law id="second" name="secondCookieLaw"></cookie-law>
+  `
+})
+class TwoCookieLawComponent { }
+
+@Component({
+  template: `
+    <cookie-law [name]="name"
+                [learnMore]="learnMore"
+                [target]="target"
+                [position]="position"
+                (isSeen)="seen($evt)"></cookie-law>
+  `
+})
+class AttributesCookieLawComponent {
+  name: string;
+  learnMore: string;
+  target: string;
+  position: string;
+
+  isSeen: boolean = false;
+
+  seen(evt: any) {
+    this.isSeen = evt;
+  }
+}

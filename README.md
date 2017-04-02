@@ -163,12 +163,11 @@ to see the application running.
 
 If set to a valid absolute or relative URL, it will render an extra 'learn more' link pointing to the link.
 
-eg.
+###### Example
+
 ```html
 <cookie-law learnMore="/learn-more"></cookie-law>
 ```
-
-###### Output
 
 ![output with link](http://i.imgur.com/0nvb6sP.png)
 
@@ -200,6 +199,22 @@ Possible values are: `"bottom"` and `"top"`.
 ```html
 <cookie-law position="top" learnMore="/learn-more" target="_self"></cookie-law>
 ```
+
+### name
+
+| Type | Default value |
+| --- | --- |
+| string | "cookieLawSeen" |
+
+Allows you to decide which name will be used for storing the cookie in the client's browser.
+
+###### Example
+
+```html
+<cookie-law name="myShinyCookieLaw"></cookie-law>
+```
+
+The previous example will generate a `myShinyCookieLaw=true` as soon as the user dismiss the banner.
 
 ## Properties
 
@@ -306,9 +321,9 @@ library starting from the version >=4.
 Make sure to include the `BrowserAnimationsModule` in your App module like in the following example:
 
 ```ts
-import { NgModule }           from '@angular/core';
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { AppComponent }       from './app.component';
+import { AppComponent } from './app.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -319,7 +334,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   ],
   imports: [
     BrowserModule,
-    BrowserAnimationsModule, // BrowserAnimationsModule
+    BrowserAnimationsModule, // Angular 4 Only
   ],
 })
 export class AppModule { }

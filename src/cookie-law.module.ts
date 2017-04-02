@@ -9,6 +9,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CookieLawComponent } from './cookie-law.component';
+import { CookieLawElementComponent } from './cookie-law-element.component';
 import { CookieLawService } from './cookie-law.service';
 
 @NgModule({
@@ -17,6 +18,7 @@ import { CookieLawService } from './cookie-law.service';
   ],
   declarations: [
     CookieLawComponent,
+    CookieLawElementComponent,
   ],
   providers: [
     CookieLawService,
@@ -29,5 +31,6 @@ export class CookieLawModule { }
 
 export {
   CookieLawComponent,
-  CookieLawService
+  CookieLawElementComponent,
+  CookieLawService,
 };

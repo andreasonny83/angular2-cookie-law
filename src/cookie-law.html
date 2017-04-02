@@ -1,21 +1,20 @@
 <div class="cookie-law-wrapper"
     [ngStyle]="currentStyles"
-    *ngIf="!cookieLawSeen"
     [@state]="animation"
     (@state.done)="afterDismissAnimation($event)">
 
   <div class="copy">
     <span #ref><ng-content></ng-content></span>
 
-  <span *ngIf="ref.childNodes.length == 0">
-    By continuing to browse the site, you're agreeing to our use of cookies.
-    <span *ngIf="learnMore">
-      Learn more in our <a [href]="learnMore" [target]="target">privacy policy</a>.
+    <span *ngIf="ref.childNodes.length == 0">
+      By continuing to browse the site, you're agreeing to our use of cookies.
+      <span *ngIf="learnMore">
+        Learn more in our <a [href]="learnMore" [target]="target">privacy policy</a>.
+      </span>
     </span>
-  </span>
 
-  <a href="#" role="button"
-              class="dismiss"
-              [innerHTML]="closeSvg"
-              (click)="dismiss($event)"></a>
+    <a href="#" role="button"
+                class="dismiss"
+                [innerHTML]="closeSvg"
+                (click)="dismiss($event)"></a>
 </div>

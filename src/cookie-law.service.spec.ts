@@ -24,5 +24,15 @@ describe('CookieLawService', () => {
     service.storeCookie();
 
     expect(service.seen()).toBe(true);
+    expect(service.seen('cookieLawSeen')).toBe(true);
+  });
+
+  it('should stored different cookie names', () => {
+    service.storeCookie('testCookie');
+
+    expect(service.seen('fakeCookie')).toBe(false);
+    expect(service.seen()).toBe(false);
+
+    expect(service.seen('testCookie')).toBe(true);
   });
 });

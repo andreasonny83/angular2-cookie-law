@@ -25,7 +25,7 @@ import {
       </a>
     </div>
 
-    <cookie-law position="top">
+    <cookie-law position="top" name="topCookieLaw">
       Allo! This is my awesome cookie-law message.
       <a href="https://github.com/andreasonny83/angular2-cookie-law">
         Click here for more info
@@ -52,15 +52,15 @@ import {
   `]
 })
 export class AppComponent implements OnInit {
-  @ViewChild('cookieLaw')
-  private cookieLawEl: any;
-  private cookieLawSeen: boolean;
+  cookieLawSeen: boolean;
+
+  @ViewChild('cookieLaw') private cookieLawEl: any;
 
   ngOnInit() {
-    this.cookieLawSeen = this.cookieLawEl.cookieLawSeen;
+    this.cookieLawSeen = this.cookieLawEl.cookieLawSeen();
   }
 
-  public dismiss(): void {
+  dismiss(): void {
     this.cookieLawEl.dismiss();
   }
 }

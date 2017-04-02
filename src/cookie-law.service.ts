@@ -11,12 +11,12 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class CookieLawService {
 
-  seen(): boolean {
-    return this.cookieExisits('cookieLawSeen');
+  seen(cookieName?: string): boolean {
+    return this.cookieExisits(cookieName || 'cookieLawSeen');
   }
 
-  storeCookie(): void {
-    return this.setCookie('cookieLawSeen');
+  storeCookie(cookieName?: string): void {
+    return this.setCookie(cookieName || 'cookieLawSeen');
   }
 
   /**

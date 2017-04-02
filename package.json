@@ -49,12 +49,12 @@
     "@angular/platform-browser": ">=2.0.0"
   },
   "devDependencies": {
-    "@angular/common": "2.4.7",
-    "@angular/compiler": "2.4.7",
-    "@angular/core": "2.4.7",
-    "@angular/platform-browser": "2.4.7",
-    "@angular/platform-browser-dynamic": "2.4.7",
-    "@angular/compiler-cli": "2.4.7",
+    "@angular/common": "2.4.10",
+    "@angular/compiler": "2.4.10",
+    "@angular/core": "2.4.10",
+    "@angular/platform-browser": "2.4.10",
+    "@angular/platform-browser-dynamic": "2.4.10",
+    "@angular/compiler-cli": "2.4.10",
     "@types/jasmine": "2.5.46",
     "@types/node": "7.0.5",
     "@types/selenium-webdriver": "2.53.39",
