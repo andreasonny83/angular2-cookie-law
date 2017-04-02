@@ -43,7 +43,6 @@
   "typings": "index.d.ts",
   "homepage": "https://github.com/andreasonny83/angular2-cookie-law#readme",
   "peerDependencies": {
-    "@angular/animations": ">=2.0.0",
     "@angular/common": ">=2.0.0",
     "@angular/core": ">=2.0.0",
     "@angular/platform-browser": ">=2.0.0"
