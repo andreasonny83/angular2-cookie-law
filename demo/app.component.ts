@@ -57,7 +57,7 @@ export class AppComponent implements OnInit {
   @ViewChild('cookieLaw') private cookieLawEl: any;
 
   ngOnInit() {
-    this.cookieLawSeen = this.cookieLawEl.cookieLawSeen();
+    this.cookieLawSeen = this.cookieLawEl.cookieLawSeen;
   }
 
   dismiss(): void {

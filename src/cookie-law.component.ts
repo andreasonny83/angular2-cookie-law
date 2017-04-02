@@ -57,16 +57,16 @@ export class CookieLawComponent implements OnInit {
   }
 
   hasBeenDismissed(): void {
+    this._service.storeCookie(this.name);
     this.seen = true;
     this.isSeen.emit(true);
   }
 
-  cookieLawSeen(): boolean {
+  get cookieLawSeen(): boolean {
     return this._service.seen(this.name);
   }
 
   dismiss(): void {
-    this._service.storeCookie(this.name);
     this.cookieLawComponent.dismiss();
   }
 }

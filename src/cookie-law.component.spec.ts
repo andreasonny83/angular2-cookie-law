@@ -94,7 +94,7 @@ describe('CookieLawComponent', () => {
 
     fixture.detectChanges();
     expect(comp.seen).toBe(false);
-    expect(comp.cookieLawSeen()).toBe(false);
+    expect(comp.cookieLawSeen).toBe(false);
   });
 
   it('CookieLawComponent should be dismissible', () => {
@@ -104,12 +104,11 @@ describe('CookieLawComponent', () => {
     fixture.detectChanges();
     expect(comp.seen).toBe(false);
 
-    comp.dismiss();
     comp.hasBeenDismissed();
     fixture.detectChanges();
 
     expect(comp.seen).toBe(true);
-    expect(comp.cookieLawSeen()).toBe(true);
+    expect(comp.cookieLawSeen).toBe(true);
   });
 
   it('CookieLawElementComponent should have a bunch of attributes', () => {
