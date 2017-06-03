@@ -18,11 +18,11 @@ import {
 import {
   CookieLawService,
 } from './cookie-law.service';
+import { CookieLawElementComponent } from './cookie-law-element.component';
 import {
-  CookieLawElementComponent,
   CookieLawTarget,
   CookieLawPosition,
-} from './cookie-law-element.component';
+} from './definitions';
 
 @Component({
   selector: 'cookie-law',
