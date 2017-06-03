@@ -12,7 +12,8 @@ coverage
 # Ignored files
 bundles
 lib
-*.d.ts
+**/*.d.ts
+!src/**/*.d.ts
 *.map
 /*.js
 

@@ -1,63 +1,41 @@
+/**
+ * angular2-cookie-law
+ *
+ * Copyright 2016-2017, @andreasonny83, All rights reserved.
+ *
+ * @author: @andreasonny83 <andreasonny83@gmail.com>
+ */
 import {
   Component,
   OnInit,
+  HostBinding,
   ViewEncapsulation,
   Input,
   Output,
   EventEmitter,
   AnimationTransitionEvent,
-  trigger,
-  state,
-  style,
-  animate,
-  transition,
 } from '@angular/core';
-
 import {
   DomSanitizer,
   SafeHtml,
 } from '@angular/platform-browser';
-
 import {
   closeIcon,
 } from './icons';
-
-export type CookieLawPosition = 'top' | 'bottom';
-export type CookieLawAnimation = 'topIn' | 'bottomIn' | 'topOut' | 'bottomOut';
-export type CookieLawTarget = '_blank' | '_self';
+import { translateInOut } from './animations';
 
 @Component({
   selector: 'cookie-law-el',
-  animations: [
-    trigger('state', [
-      state('bottomOut', style({ transform: 'translateY(100%)' })),
-      state('topOut', style({ transform: 'translateY(-100%)' })),
-      state('*', style({ transform: 'translateY(0)' })),
-
-      transition('void => topIn', [
-        style({ transform: 'translateY(-100%)' }),
-        animate('1000ms ease-in-out'),
-      ]),
-
-      transition('void => bottomIn', [
-        style({ transform: 'translateY(100%)' }),
-        animate('1000ms ease-in-out'),
-      ]),
-
-      transition('* => *', animate('1000ms ease-out')),
-    ])
-  ],
+  animations: [translateInOut],
   styleUrls: [ './cookie-law.css' ],
   templateUrl: './cookie-law.html',
   encapsulation: ViewEncapsulation.None,
-  host: {
-    '[class.cookie-law]': 'true'
-  }
 })
 export class CookieLawElementComponent implements OnInit {
-  animation: CookieLawAnimation;
-  closeSvg: SafeHtml;
-  currentStyles: any;
+  @HostBinding('class.cookie-law') public cookieLawClass: boolean;
+  public closeSvg: SafeHtml;
+  public currentStyles: any;
+  public transition: CookieLawAnimation;
 
   @Input()
   get learnMore() { return this._learnMore; }
@@ -90,12 +68,13 @@ export class CookieLawElementComponent implements OnInit {
   constructor(
     private domSanitizer: DomSanitizer,
   ) {
-    this.animation = 'bottomIn';
+    this.transition = 'bottomIn';
     this._position = 'bottom';
+    this.cookieLawClass = true;
   }
 
-  ngOnInit(): void {
-    this.animation = this.position === 'bottom' ? 'bottomIn' : 'topIn';
+  public ngOnInit(): void {
+    this.transition = this.position === 'bottom' ? 'bottomIn' : 'topIn';
 
     this.closeSvg = this.domSanitizer.bypassSecurityTrustHtml(closeIcon);
 
@@ -105,18 +84,18 @@ export class CookieLawElementComponent implements OnInit {
     };
   }
 
-  afterDismissAnimation(evt: AnimationTransitionEvent): void {
+  public afterDismissAnimation(evt: AnimationTransitionEvent): void {
     if (evt.toState === 'topOut' ||
         evt.toState === 'bottomOut') {
       this.isSeen.emit(true);
     }
   }
 
-  dismiss(evt?: MouseEvent): void {
+  public dismiss(evt?: MouseEvent): void {
     if (evt) {
       evt.preventDefault();
     }
 
-    this.animation = this.position === 'top' ? 'topOut' : 'bottomOut';
+    this.transition = this.position === 'top' ? 'topOut' : 'bottomOut';
   }
 }

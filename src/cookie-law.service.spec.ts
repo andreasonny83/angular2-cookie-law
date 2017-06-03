@@ -1,11 +1,3 @@
-/**
- * angular2-cookie-law
- *
- * Copyright 2016-2017, @andreasonny83, All rights reserved.
- *
- * @author: @andreasonny83 <andreasonny83@gmail.com>
- */
-
 import { CookieLawService } from './cookie-law.service';
 
 describe('CookieLawService', () => {

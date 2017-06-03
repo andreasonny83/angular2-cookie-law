@@ -5,17 +5,16 @@
  *
  * @author: @andreasonny83 <andreasonny83@gmail.com>
  */
-
 import { Injectable } from '@angular/core';
 
 @Injectable()
 export class CookieLawService {
 
-  seen(cookieName?: string): boolean {
+  public seen(cookieName?: string): boolean {
     return this.cookieExisits(cookieName || 'cookieLawSeen');
   }
 
-  storeCookie(cookieName?: string): void {
+  public storeCookie(cookieName?: string): void {
     return this.setCookie(cookieName || 'cookieLawSeen');
   }
 

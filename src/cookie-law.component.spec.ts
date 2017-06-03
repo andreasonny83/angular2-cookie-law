@@ -1,11 +1,3 @@
-/**
- * angular2-cookie-law
- *
- * Copyright 2016-2017, @andreasonny83, All rights reserved.
- *
- * @author: @andreasonny83 <andreasonny83@gmail.com>
- */
-
 import {
   ComponentFixture,
   TestBed,
@@ -116,8 +108,7 @@ describe('CookieLawComponent', () => {
     let comp: CookieLawElementComponent = fixture.debugElement.componentInstance;
 
     fixture.detectChanges();
-
-    expect(comp.animation).toBe('bottomIn')
+    expect(comp.transition).toBe('bottomIn')
     expect(comp.position).toBe('bottom')
     expect(comp.learnMore).not.toBeDefined();
     expect(comp.target).not.toBeDefined();
@@ -139,7 +130,7 @@ describe('CookieLawComponent', () => {
     expect(el.componentInstance.learnMore).not.toBeDefined();
     expect(el.componentInstance.target).toBe('_blank');
     expect(el.componentInstance.position).toBe('bottom');
-    expect(el.componentInstance.animation).toBe('bottomIn');
+    expect(el.componentInstance.transition).toBe('bottomIn');
   });
 
   it('CookieLawElementComponent should renders on the top', () => {
@@ -155,7 +146,7 @@ describe('CookieLawComponent', () => {
 
     expect(comp.componentInstance.position).toBe('top');
     expect(el.componentInstance.position).toBe('top');
-    expect(el.componentInstance.animation).toBe('topIn');
+    expect(el.componentInstance.transition).toBe('topIn');
   });
 
   it('CookieLawElementComponent learnMore', () => {

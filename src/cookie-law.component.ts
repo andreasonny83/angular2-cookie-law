@@ -5,7 +5,6 @@
  *
  * @author: @andreasonny83 <andreasonny83@gmail.com>
  */
-
 import {
   Component,
   OnInit,
@@ -20,11 +19,7 @@ import {
   CookieLawService,
 } from './cookie-law.service';
 
-import {
-  CookieLawElementComponent,
-  CookieLawTarget,
-  CookieLawPosition,
-} from './cookie-law-element.component';
+import { CookieLawElementComponent } from './cookie-law-element.component';
 
 @Component({
   selector: 'cookie-law',
@@ -38,35 +33,43 @@ import {
 })
 export class CookieLawComponent implements OnInit {
   @HostBinding('attr.seen')
-  seen: boolean = true;
+  public seen: boolean = true;
 
   @ViewChild(CookieLawElementComponent)
-  cookieLawComponent: CookieLawElementComponent;
+  public cookieLawComponent: CookieLawElementComponent;
 
-  @Input() name: string;
-  @Input() learnMore: string;
-  @Input() target: CookieLawTarget;
-  @Input() position: CookieLawPosition;
+  @Input()
+  public name: string;
 
-  @Output() isSeen = new EventEmitter<boolean>();
+  @Input()
+  public learnMore: string;
+
+  @Input()
+  public target: CookieLawTarget;
+
+  @Input()
+  public position: CookieLawPosition;
+
+  @Output()
+  public isSeen = new EventEmitter<boolean>();
 
   constructor (private _service: CookieLawService) { }
 
-  ngOnInit() {
+  public get cookieLawSeen(): boolean {
+    return this._service.seen(this.name);
+  }
+
+  public ngOnInit() {
     this.seen = this._service.seen(this.name);
   }
 
-  hasBeenDismissed(): void {
+  public hasBeenDismissed(): void {
     this._service.storeCookie(this.name);
     this.seen = true;
     this.isSeen.emit(true);
   }
 
-  get cookieLawSeen(): boolean {
-    return this._service.seen(this.name);
-  }
-
-  dismiss(): void {
+  public dismiss(): void {
     this.cookieLawComponent.dismiss();
   }
 }

@@ -45,7 +45,7 @@ module.exports = {
           {
             loader: 'awesome-typescript-loader',
             options: {
-              configFileName: 'demo/tsconfig.json',
+              configFileName: 'src/tsconfig.json',
             }
           },
           {
