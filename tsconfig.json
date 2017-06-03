@@ -36,6 +36,9 @@
   "files": [
     "index.ts"
   ],
+  "include": [
+    "src/typings.d.ts"
+  ],
   "exclude": [
     "node_modules",
     "demo",
