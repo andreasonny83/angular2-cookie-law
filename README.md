@@ -216,7 +216,7 @@ Allows you to decide which name will be used for storing the cookie in the clien
 
 The previous example will generate a `myShinyCookieLaw=true` as soon as the user dismiss the banner.
 
-### expire
+### expiration
 
 | Type | Default value | Description |
 | --- | --- | --- |
@@ -225,7 +225,7 @@ The previous example will generate a `myShinyCookieLaw=true` as soon as the user
 ###### Example
 
 ```html
-<cookie-law name="myShinyCookieLaw" expire="7">I'm gonna expire in 1 week!</cookie-law>
+<cookie-law name="myShinyCookieLaw" expiration="7">I'm gonna expire in 1 week!</cookie-law>
 ```
 
 ## Properties
