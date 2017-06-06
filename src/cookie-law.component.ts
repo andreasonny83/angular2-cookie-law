@@ -53,10 +53,15 @@ export class CookieLawComponent implements OnInit {
   @Input()
   public position: CookieLawPosition;
 
+  @Input()
+  public expiration: number;
+
   @Output()
   public isSeen = new EventEmitter<boolean>();
 
-  constructor (private _service: CookieLawService) { }
+  constructor (private _service: CookieLawService) {
+    this.name = 'cookieLawSeen'; // set a default cookie name if not provided
+  }
 
   public get cookieLawSeen(): boolean {
     return this._service.seen(this.name);
@@ -67,7 +72,7 @@ export class CookieLawComponent implements OnInit {
   }
 
   public hasBeenDismissed(): void {
-    this._service.storeCookie(this.name);
+    this._service.storeCookie(this.name, this.expiration);
     this.seen = true;
     this.isSeen.emit(true);
   }

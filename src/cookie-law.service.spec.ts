@@ -13,10 +13,18 @@ describe('CookieLawService', () => {
   });
 
   it('#seen should now have a cookie stored', () => {
-    service.storeCookie();
+    service.storeCookie('cookieLawSeen');
 
     expect(service.seen()).toBe(true);
     expect(service.seen('cookieLawSeen')).toBe(true);
+  });
+
+  it('set an expiration time', () => {
+    service.storeCookie('cookieLawSeen', 1);
+
+    expect(service.seen()).toBe(true);
+    expect(service.seen('cookieLawSeen')).toBe(true);
+    expect(document.cookie.match('cookieLawSeen').indexOf('cookieLawSeen')).not.toBe(-1);
   });
 
   it('should stored different cookie names', () => {

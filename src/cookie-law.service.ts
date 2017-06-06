@@ -10,12 +10,12 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class CookieLawService {
 
-  public seen(cookieName?: string): boolean {
-    return this.cookieExisits(cookieName || 'cookieLawSeen');
+  public seen(cookieName: string = 'cookieLawSeen'): boolean {
+    return this.cookieExisits(cookieName);
   }
 
-  public storeCookie(cookieName?: string): void {
-    return this.setCookie(cookieName || 'cookieLawSeen');
+  public storeCookie(cookieName: string, expiration?: number): void {
+    return this.setCookie(cookieName, expiration);
   }
 
   /**
@@ -46,7 +46,13 @@ export class CookieLawService {
    *
    * @param {string} name [the name for the cookie]
    */
-  private setCookie(name: string): void {
-    document.cookie = encodeURIComponent(name) + '=true; path=/';
+  private setCookie(name: string, expiration?: number): void {
+    const date = new Date();
+    let expires;
+
+    date.setTime(date.getTime() + expiration * 86400000);
+    expires = '; expires=' + date.toUTCString();
+
+    document.cookie = encodeURIComponent(name) + '=true; path=/' + expires;
   }
 }

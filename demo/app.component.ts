@@ -5,7 +5,7 @@ import {
 } from '@angular/core';
 
 @Component({
-  selector: 'demo-app',
+  selector: 'cookie-demo-app',
   template: `
     <h1>Angular2-Cookie-Law</h1>
     <span>Demo page</span>
@@ -25,8 +25,8 @@ import {
       </a>
     </div>
 
-    <cookie-law position="top" name="topCookieLaw">
-      Allo! This is my awesome cookie-law message.
+    <cookie-law position="top" name="topCookieLaw" [expiration]="7">
+      Allo! I'm expiring in one week!.
       <a href="https://github.com/andreasonny83/angular2-cookie-law">
         Click here for more info
       </a>
