@@ -8,7 +8,6 @@
     "clean": "rimraf bundles && rimraf lib",
     "commit": "git-cz",
     "coveralls": "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls",
-    "demo": "webpack-dev-server --inline --progress --open --port 9007 --config config/webpack.demo.js --content-base demo",
     "inline": "ng2-inline -o lib -f -b src src/**/*.ts",
     "lint": "tslint --type-check --project src/tsconfig.json",
     "ngc": "ngc -p tsconfig.json",
@@ -89,7 +88,6 @@
     "uglify-js": "2.8.16",
     "uglifyjs-webpack-plugin": "0.3.1",
     "webpack": "2.3.2",
-    "webpack-dev-server": "2.4.2",
     "zone.js": "0.7.2"
   },
   "config": {

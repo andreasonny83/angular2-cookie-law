@@ -144,11 +144,28 @@ export class AppComponent  { }
 Have a look at the [demo](https://github.com/andreasonny83/angular2-cookie-law/tree/master/demo)
 available in this repository for a real Angular2 application using the `Angular2-Cookie-Law` library.
 
+## Serving the Demo app
+
+To run locally the Demo app, open a terminal inside the demo folder present in this project,
+then install all the node dependencies
+
 ```bash
-$ npm run demo
+$ npm install
+# Or using yarn
+$ yarn
 ```
 
-Open your browser to [http://localhost:9007/](http://localhost:9007/)
+Now you can serve the demo app
+
+```bash
+$ npm start
+# Or using Yarn
+$ yarn start
+```
+
+This will serve a local copy of the demo app using Angular-CLI
+
+Open your browser to [http://localhost:4002/](http://localhost:4002/)
 to see the application running.
 
 ## Options
