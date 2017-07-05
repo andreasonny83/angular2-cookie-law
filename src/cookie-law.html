@@ -9,7 +9,7 @@
     <span *ngIf="ref.childNodes.length == 0">
       By continuing to browse the site, you're agreeing to our use of cookies.
       <span *ngIf="learnMore">
-        Learn more in our <a [href]="learnMore" [target]="target">privacy policy</a>.
+        Learn more in our <a [href]="learnMore" [target]="target" [rel]="noopener ? 'noopener noreferrer' : null">privacy policy</a>.
       </span>
     </span>
 

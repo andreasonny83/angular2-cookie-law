@@ -64,7 +64,10 @@ export class CookieLawElementComponent implements OnInit {
                      ) ? value : 'bottom';
   }
 
-  @Output() isSeen = new EventEmitter<boolean>();
+  @Output()
+  public isSeen = new EventEmitter<boolean>();
+
+  public noopener: boolean;
 
   private _learnMore: string;
   private _target: CookieLawTarget;
@@ -79,6 +82,7 @@ export class CookieLawElementComponent implements OnInit {
   }
 
   public ngOnInit(): void {
+    this.noopener = this._target === '_blank';
     this.transition = this.position === 'bottom' ? 'bottomIn' : 'topIn';
 
     this.closeSvg = this.domSanitizer.bypassSecurityTrustHtml(closeIcon);

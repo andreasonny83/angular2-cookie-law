@@ -59,12 +59,12 @@ export class CookieLawComponent implements OnInit {
   @Output()
   public isSeen = new EventEmitter<boolean>();
 
-  constructor (private _service: CookieLawService) {
-    this.name = 'cookieLawSeen'; // set a default cookie name if not provided
-  }
-
   public get cookieLawSeen(): boolean {
     return this._service.seen(this.name);
+  }
+
+  constructor (private _service: CookieLawService) {
+    this.name = 'cookieLawSeen'; // set a default cookie name if not provided
   }
 
   public ngOnInit() {
