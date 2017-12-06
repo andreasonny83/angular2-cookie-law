@@ -320,7 +320,7 @@ following example:
 ```html
 <cookie-law position="top">
   This website contains cookie.
-  <a =href="#/cookie-policy">Read more</a>
+  <a href="#/cookie-policy">Read more</a>
 </cookie-law>
 ```
 
