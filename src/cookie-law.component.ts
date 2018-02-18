@@ -28,6 +28,7 @@ import {
   selector: 'cookie-law',
   template: `
     <cookie-law-el *ngIf="!seen"
+                   [awsomeCloseIcon]="awsomeCloseIcon"
                    [learnMore]="learnMore"
                    [target]="target"
                    [position]="position"
@@ -56,6 +57,9 @@ export class CookieLawComponent implements OnInit {
   @Input()
   public expiration: number;
 
+  @Input()
+  public awsomeCloseIcon: string;
+
   @Output()
   public isSeen = new EventEmitter<boolean>();
 
@@ -63,7 +67,7 @@ export class CookieLawComponent implements OnInit {
     return this._service.seen(this.name);
   }
 
-  constructor (private _service: CookieLawService) {
+  constructor(private _service: CookieLawService) {
     this.name = 'cookieLawSeen'; // set a default cookie name if not provided
   }
 

@@ -32,7 +32,7 @@ import {
       </a>
     </cookie-law>
 
-    <cookie-law #cookieLaw (isSeen)="cookieLawSeen = $event" learnMore="/false" target="_blank"></cookie-law>
+    <cookie-law #cookieLaw (isSeen)="cookieLawSeen = $event" learnMore="/false" target="_blank" awsomeCloseIcon="fa-accessible-icon" ></cookie-law>
   `,
   styles: [`
     a.link {
