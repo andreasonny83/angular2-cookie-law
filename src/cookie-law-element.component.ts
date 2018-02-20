@@ -43,9 +43,15 @@ export class CookieLawElementComponent implements OnInit {
   public transition: CookieLawAnimation;
 
   @Input()
-  get learnMore() { return this._learnMore; }
+  get learnMore() { return this._learnMore; } 
   set learnMore(value: string) {
     this._learnMore = (value !== null && `${value}` !== 'false') ? value : null;
+  }
+
+  @Input()
+  get awsomeCloseIcon() { return this._awsomeCloseIcon; } 
+  set awsomeCloseIcon(value: string) {
+    this._awsomeCloseIcon = (value !== null && `${value}` !== 'false') ? value : null;
   }
 
   @Input()
@@ -70,6 +76,7 @@ export class CookieLawElementComponent implements OnInit {
   public noopener: boolean;
 
   private _learnMore: string;
+  private _awsomeCloseIcon: string;
   private _target: CookieLawTarget;
   private _position: CookieLawPosition;
 
@@ -82,10 +89,17 @@ export class CookieLawElementComponent implements OnInit {
   }
 
   public ngOnInit(): void {
-    this.noopener = this._target === '_blank';
+    this.noopener = this._target === '_blank'; 
     this.transition = this.position === 'bottom' ? 'bottomIn' : 'topIn';
 
-    this.closeSvg = this.domSanitizer.bypassSecurityTrustHtml(closeIcon);
+    if(this._awsomeCloseIcon){
+      this.closeSvg = this.domSanitizer.bypassSecurityTrustHtml("<i class='fab " +  this._awsomeCloseIcon + "'></i>");
+    }else{
+      this.closeSvg = this.domSanitizer.bypassSecurityTrustHtml(closeIcon);
+    }
+    
+
+    
 
     this.currentStyles = {
       'top': this.position === 'top' ? '0' : null,

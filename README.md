@@ -171,6 +171,29 @@ If set to a valid absolute or relative URL, it will render an extra 'learn more'
 
 ![output with link](http://i.imgur.com/0nvb6sP.png)
 
+### awsomeCloseIcon
+
+Font Awsome is required in your header for this feature to work.
+
+```html
+<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+```
+
+
+
+
+| Type | Default value |
+| --- | --- |
+| string | null |
+
+If set to a Font awsome Icon e.g. "fa-window-close" it will replace the standard SVG with the Font awsome Icon.
+
+###### Example
+
+```html
+<cookie-law awsomeCloseIcon="fa-window-close"></cookie-law>
+```
+
 ### target
 
 | Type | Default value |
