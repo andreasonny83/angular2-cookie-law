@@ -10,10 +10,12 @@ import { CommonModule } from '@angular/common';
 import { CookieLawComponent } from './cookie-law.component';
 import { CookieLawElementComponent } from './cookie-law-element.component';
 import { CookieLawService } from './cookie-law.service';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   imports: [
     CommonModule,
+    NoopAnimationsModule
   ],
   declarations: [
     CookieLawComponent,
