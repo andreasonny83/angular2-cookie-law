@@ -5,16 +5,9 @@
  *
  * @author: @andreasonny83 <andreasonny83@gmail.com>
  */
-import {
-  trigger,
-  state,
-  style,
-  animate,
-  transition,
-  AnimationEntryMetadata,
-} from '@angular/core';
+import { trigger, state, style, animate, transition } from '@angular/animations';
 
-export const translateInOut: AnimationEntryMetadata =
+export const translateInOut =
   trigger('transition', [
     state('*', style({ transform: 'translateY(0)' })),
     state('void', style({ transform: 'translateY(0)' })),

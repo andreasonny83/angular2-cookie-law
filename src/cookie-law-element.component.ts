@@ -12,9 +12,9 @@ import {
   ViewEncapsulation,
   Input,
   Output,
-  EventEmitter,
-  AnimationTransitionEvent,
+  EventEmitter
 } from '@angular/core';
+import { AnimationEvent } from '@angular/animations';
 import {
   DomSanitizer,
   SafeHtml,
@@ -107,7 +107,7 @@ export class CookieLawElementComponent implements OnInit {
     };
   }
 
-  public afterDismissAnimation(evt: AnimationTransitionEvent): void {
+  public afterDismissAnimation(evt: AnimationEvent): void {
     if (evt.toState === 'topOut' ||
         evt.toState === 'bottomOut') {
       this.isSeen.emit(true);
