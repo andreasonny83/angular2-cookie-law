@@ -1,0 +1,27 @@
+language: node_js
+
+notifications:
+  email: false
+
+node_js:
+  - '8'
+
+addons:
+  chrome: stable
+
+before_install:
+  # start your web application and listen on `localhost`
+  - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost &
+
+script:
+  - npm run lint
+  - npm run test:headless
+
+after_success:
+  # - npm run coveralls
+  - npm run build:prod
+  - npm run semantic-release
+
+branches:
+  except:
+    - /^v\d+\.\d+\.\d+$/

@@ -1,0 +1,87 @@
+.cookie-law-wrapper {
+  background: #333;
+  color: #bbb;
+  display: block;
+  font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+  font-size: 15px;
+  font-weight: 200;
+  line-height: 20px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999999999;
+  font-smooth: always;
+  -webkit-font-smoothing: antialiased;
+}
+
+.cookie-law-wrapper a {
+  color: #bbb;
+  -webkit-transition: color .2s;
+  transition: color .2s;
+}
+
+.cookie-law-wrapper a:hover {
+  color: #fff;
+}
+
+.cookie-law-wrapper a:hover svg {
+  fill: #fff;
+}
+
+.cookie-law-wrapper .dismiss {
+  display: block;
+  box-sizing: border-box;
+  padding: 10px;
+  position: absolute;
+  top: 0;
+  right: 10px;
+  text-decoration: none;
+  line-height: 20px;
+}
+
+.cookie-law-wrapper .dismiss svg {
+  display: block;
+  fill: #bbb;
+  width: 20px;
+  height: 20px;
+  -webkit-transition: fill .2s;
+  transition: fill .2s;
+}
+
+.cookie-law-wrapper .copy {
+  box-sizing: border-box;
+  padding: 10px 60px 10px 10px;
+}
+
+.cookie-law-wrapper .copy span {
+  color: #fff;
+  font-weight: 400;
+}
+
+.cookie-law-wrapper .copy a {
+  text-decoration: underline;
+}
+
+.cookie-law-wrapper .copy a:active, .copy a:hover {
+    outline: 0;
+}
+
+@media (min-width: 600px) {
+  /* For bigger devices: */
+  .cookie-law-wrapper .copy {
+    padding: 20px 60px 20px 20px;
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  .cookie-law-wrapper .dismiss {
+    top: 10px;
+    right: 15px;
+  }
+
+  .cookie-law-wrapper .dismiss svg {
+    width: 24px;
+    height: 24px;
+  }
+}

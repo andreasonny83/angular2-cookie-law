@@ -1,0 +1,30 @@
+{
+  "name": "angular2-cookie-law",
+  "description": "Angular2+ component that provides a banner to inform users about cookie law",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/andreasonny83/angular2-cookie-law.git"
+  },
+  "keywords": [
+    "ng2",
+    "ng4",
+    "angular",
+    "angular2",
+    "angular4",
+    "angular2-component",
+    "angular4-component",
+    "cookie",
+    "cookie-law"
+  ],
+  "author": "Andrea Sonny <andreasonny83@gmail.com> (https://github.com/andreasonny83)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/andreasonny83/angular2-cookie-law/issues"
+  },
+  "homepage": "https://github.com/andreasonny83/angular2-cookie-law#readme",
+  "version": "6.0.0-rc.1",
+  "peerDependencies": {
+    "@angular/common": "^6.0.0-rc.0 || ^6.0.0",
+    "@angular/core": "^6.0.0-rc.0 || ^6.0.0"
+  }
+}
