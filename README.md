@@ -9,14 +9,14 @@
 
 > Angular2+ component that provides a banner to inform users about the cookie law
 
-This documentation is for the latest version of `angular2-cookie-law` (6.x.x).
-If you're using an older version of Angular, please install `angular2-cookie-law`
+Angular2 Cookie Law is an HTML `<cookie-law>` tag enhanced with styling and animation.
+
+**This documentation is for the latest version of `angular2-cookie-law` (6.x.x).**
+
+If you're using an older version of Angular (<6), please install `angular2-cookie-law`
 in version 1 with
 `npm i --save angular2-cookie-law@1`
-and check oud the documentation available [here](https://github.com/andreasonny83/angular2-cookie-law/tree/v1.4.0).
-
-Angular2 Cookie Law is an HTML `<cookie-law>` tag enhanced with styling and animation
-now compatible with Angular4 too.
+and check out the documentation available [here](https://github.com/andreasonny83/angular2-cookie-law/tree/v1.4.0).
 
 **Live DEMO:**
 
@@ -35,7 +35,6 @@ now compatible with Angular4 too.
   * [Events](#events)
   * [Methods](#methods)
 * [Custom template](#custom-template)
-* [Angular 4](#angular-4)
 * [Contributing](#contributing)
 * [Changelog](#changelog)
 * [License](#license)
@@ -123,14 +122,26 @@ export class AppComponent  { }
 
 # Demo App
 
-Have a look at the [demo](https://github.com/andreasonny83/angular2-cookie-law/tree/master/demo)
-available in this repository for a real Angular2 application using the `Angular2-Cookie-Law` library.
+Have a look at the demo app available in this repository for a real Angular application using the `angular2-Cookie-Law` library.
+Clone this repo on you machine with
 
-```bash
-$ npm run demo
+```sh
+$ git clone git@github.com:andreasonny83/angular2-cookie-law.git
 ```
 
-Open your browser to [http://localhost:9007/](http://localhost:9007/)
+Then install all the Node dependencies (Node v8 or later is required).
+
+```sh
+$ npm install
+```
+
+And run the project with:
+
+```bash
+$ npm start
+```
+
+Open your browser to [http://localhost:4200/](http://localhost:4200/)
 to see the application running.
 
 ## Options
