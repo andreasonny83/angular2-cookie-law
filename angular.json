@@ -138,6 +138,7 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
+            "browsers": "Chrome",
             "main": "projects/angular2-cookie-law/src/test.ts",
             "tsConfig": "projects/angular2-cookie-law/tsconfig.spec.json",
             "karmaConfig": "projects/angular2-cookie-law/karma.conf.js"

@@ -28,7 +28,9 @@ import { CookieLawTarget, CookieLawPosition } from './definitions';
                           [learnMore]="learnMore"
                           [target]="target"
                           [position]="position"
-                          (isSeen)="hasBeenDismissed()"></cookie-law-component>
+                          (isSeen)="hasBeenDismissed()">
+      <ng-content></ng-content>
+    </cookie-law-component>
   `,
 })
 export class CookieLawContainerComponent implements OnInit {
