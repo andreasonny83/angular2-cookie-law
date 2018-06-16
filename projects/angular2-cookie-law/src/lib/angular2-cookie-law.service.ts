@@ -12,39 +12,30 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class Angular2CookieLawService {
-
   public seen(cookieName: string = 'cookieLawSeen'): boolean {
-    return this.cookieExisits(cookieName);
+    const cookies: Array<string> = document.cookie.split(';');
+
+    return this.cookieExisits(cookieName, cookies);
   }
 
   public storeCookie(cookieName: string, expiration?: number): void {
     return this.setCookie(cookieName, expiration);
   }
 
-  private cookieExisits(name: string): boolean {
-    const ca: Array<string> = document.cookie.split(';');
-    const caLen: number = ca.length;
-    const cookieName = name + '=';
-    let c: string;
+  private cookieExisits(name: string, cookies: Array<string>): boolean {
+    const cookieName = `${name}=`;
 
-    for (let i = 0; i < caLen; i += 1) {
-      c = ca[i].replace(/^\s\+/g, '');
-      if (c.indexOf(cookieName) !== -1) {
-        return true;
-      }
-    }
-
-    return false;
+    return cookies.reduce((prev, curr) =>
+      prev || curr.trim().search(cookieName) > -1, false);
   }
 
   private setCookie(name: string, expiration?: number): void {
-    const date = new Date();
-    let expires;
+    const now: Date = new Date();
+    const exp: Date = new Date(now.getTime() + expiration * 86400000);
 
-    date.setTime(date.getTime() + expiration * 86400000);
-    expires = '; expires=' + date.toUTCString();
+    const cookieString = encodeURIComponent(name) +
+      `=true;path=/;expires=${exp.toUTCString()};`;
 
-    document.cookie = encodeURIComponent(name) + '=true; path=/' + expires;
+    document.cookie = cookieString;
   }
-
 }

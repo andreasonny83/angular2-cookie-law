@@ -166,7 +166,7 @@ If set to a valid absolute or relative URL, it will render an extra 'learn more'
 
 ### awsomeCloseIcon
 
-Font Awsome is required in your header for this feature to work.
+[Font Awesome](https://fontawesome.com/) is required in your header for this feature to work.
 
 ```html
 <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
@@ -176,7 +176,7 @@ Font Awsome is required in your header for this feature to work.
 | --- | --- |
 | string | null |
 
-If set to a Font awsome Icon e.g. "fa-window-close" it will replace the standard SVG with the Font awsome Icon.
+If set to a Font awesome Icon e.g. "fa-window-close" it will replace the standard SVG with the Font awesome Icon.
 
 ###### Example
 
