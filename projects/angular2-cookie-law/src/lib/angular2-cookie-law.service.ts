@@ -6,14 +6,25 @@
  * @author: @andreasonny83 <andreasonny83@gmail.com>
  */
 
-import { Injectable } from '@angular/core';
+import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
+import { DOCUMENT, isPlatformBrowser } from '@angular/common';
 
 @Injectable({
   providedIn: 'root'
 })
 export class Angular2CookieLawService {
+
+  constructor(
+    @Inject(DOCUMENT) private doc: Document,
+    @Inject(PLATFORM_ID) private platform: Object
+  ) { }
+
   public seen(cookieName: string = 'cookieLawSeen'): boolean {
-    const cookies: Array<string> = document.cookie.split(';');
+    let cookies: Array<string> = [];
+
+    if (isPlatformBrowser(this.platform)) {
+      cookies = this.doc.cookie.split(';');
+    }
 
     return this.cookieExisits(cookieName, cookies);
   }
@@ -36,6 +47,8 @@ export class Angular2CookieLawService {
     const cookieString = encodeURIComponent(name) +
       `=true;path=/;expires=${exp.toUTCString()};`;
 
-    document.cookie = cookieString;
+    if (isPlatformBrowser(this.platform)) {
+      this.doc.cookie = cookieString;
+    }
   }
 }
