@@ -13,11 +13,10 @@ import { DOCUMENT, isPlatformBrowser } from '@angular/common';
   providedIn: 'root'
 })
 export class Angular2CookieLawService {
-
   constructor(
     @Inject(DOCUMENT) private doc: any,
     @Inject(PLATFORM_ID) private platform: Object
-  ) { }
+  ) {}
 
   public seen(cookieName: string = 'cookieLawSeen'): boolean {
     let cookies: Array<string> = [];
@@ -36,16 +35,18 @@ export class Angular2CookieLawService {
   private cookieExisits(name: string, cookies: Array<string>): boolean {
     const cookieName = `${name}=`;
 
-    return cookies.reduce((prev, curr) =>
-      prev || curr.trim().search(cookieName) > -1, false);
+    return cookies.reduce(
+      (prev, curr) => prev || curr.trim().search(cookieName) > -1,
+      false
+    );
   }
 
   private setCookie(name: string, expiration?: number): void {
     const now: Date = new Date();
     const exp: Date = new Date(now.getTime() + expiration * 86400000);
 
-    const cookieString = encodeURIComponent(name) +
-      `=true;path=/;expires=${exp.toUTCString()};`;
+    const cookieString =
+      encodeURIComponent(name) + `=true;path=/;expires=${exp.toUTCString()};`;
 
     if (isPlatformBrowser(this.platform)) {
       this.doc.cookie = cookieString;

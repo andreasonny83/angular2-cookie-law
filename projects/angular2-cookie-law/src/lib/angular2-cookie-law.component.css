@@ -2,7 +2,7 @@
   background: #333;
   color: #bbb;
   display: block;
-  font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
   font-size: 15px;
   font-weight: 200;
   line-height: 20px;
@@ -17,8 +17,8 @@
 
 .cookie-law-wrapper a {
   color: #bbb;
-  -webkit-transition: color .2s;
-  transition: color .2s;
+  -webkit-transition: color 0.2s;
+  transition: color 0.2s;
 }
 
 .cookie-law-wrapper a:hover {
@@ -45,8 +45,8 @@
   fill: #bbb;
   width: 20px;
   height: 20px;
-  -webkit-transition: fill .2s;
-  transition: fill .2s;
+  -webkit-transition: fill 0.2s;
+  transition: fill 0.2s;
 }
 
 .cookie-law-wrapper .copy {
@@ -63,8 +63,9 @@
   text-decoration: underline;
 }
 
-.cookie-law-wrapper .copy a:active, .copy a:hover {
-    outline: 0;
+.cookie-law-wrapper .copy a:active,
+.copy a:hover {
+  outline: 0;
 }
 
 @media (min-width: 600px) {

@@ -27,19 +27,15 @@ describe('CookieLawContainerComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [
-        NoopAnimationsModule,
-      ],
-      declarations: [
-        CookieLawContainerComponent,
-        CookieLawComponent,
-      ],
-      providers: [{
-        provide: Angular2CookieLawService,
-        useValue: CookieLawServiceStub,
-      }],
-    })
-    .compileComponents();
+      imports: [NoopAnimationsModule],
+      declarations: [CookieLawContainerComponent, CookieLawComponent],
+      providers: [
+        {
+          provide: Angular2CookieLawService,
+          useValue: CookieLawServiceStub
+        }
+      ]
+    }).compileComponents();
 
     cookiesPolicyService = TestBed.get(Angular2CookieLawService);
   }));
@@ -61,8 +57,9 @@ describe('CookieLawContainerComponent', () => {
 
     expect(component).not.toBeNull();
 
-    expect(fixture.debugElement.nativeElement.textContent)
-      .toContain('By continuing to browse the site, you\'re agreeing to our use of cookies.');
+    expect(fixture.debugElement.nativeElement.textContent).toContain(
+      'By continuing to browse the site, you\'re agreeing to our use of cookies.'
+    );
   });
 
   it('CookieLawComponent should have a `seen` attribute', () => {
@@ -95,12 +92,15 @@ describe('CookieLawContainerComponent', () => {
   it('CookieLawElementComponent should accept attributes', () => {
     fixture.detectChanges();
 
-    const el: DebugElement = fixture.debugElement.query(By.css('cookie-law-component'));
+    const el: DebugElement = fixture.debugElement.query(
+      By.css('cookie-law-component')
+    );
 
     expect(fixture.nativeElement.getAttribute('seen')).toBe('false');
 
-    expect(el.nativeElement.textContent)
-      .not.toContain(`Learn more in our privacy policy.`);
+    expect(el.nativeElement.textContent).not.toContain(
+      `Learn more in our privacy policy.`
+    );
     expect(el.componentInstance.name).not.toBeDefined();
     expect(el.componentInstance.learnMore).not.toBeDefined();
     expect(el.componentInstance.target).toBe('_blank');
@@ -114,7 +114,9 @@ describe('CookieLawContainerComponent', () => {
 
     fixture.detectChanges();
 
-    const el: DebugElement = fixture.debugElement.query(By.css('cookie-law-component'));
+    const el: DebugElement = fixture.debugElement.query(
+      By.css('cookie-law-component')
+    );
 
     expect(component.position).toBe('top');
     expect(el.componentInstance.position).toBe('top');
@@ -126,11 +128,14 @@ describe('CookieLawContainerComponent', () => {
 
     fixture.detectChanges();
 
-    const el: DebugElement = fixture.debugElement.query(By.css('cookie-law-component'));
+    const el: DebugElement = fixture.debugElement.query(
+      By.css('cookie-law-component')
+    );
 
     expect(el.componentInstance.target).toBe('_self');
-    expect(el.nativeElement.textContent)
-      .toContain(`Learn more in our privacy policy.`);
+    expect(el.nativeElement.textContent).toContain(
+      `Learn more in our privacy policy.`
+    );
 
     component.learnMore = 'false';
 

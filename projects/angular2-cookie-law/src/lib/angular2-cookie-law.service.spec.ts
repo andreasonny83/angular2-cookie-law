@@ -35,24 +35,28 @@ describe('Angular2CookieLawService', () => {
 
     expect(service.seen()).toBe(true);
     expect(service.seen('cookieLawSeen')).toBe(true);
-    expect(document.cookie.match('cookieLawSeen')
-      .indexOf('cookieLawSeen')).not.toBe(-1);
+    expect(
+      document.cookie.match('cookieLawSeen').indexOf('cookieLawSeen')
+    ).not.toBe(-1);
   });
 
-  it('seen should return the current stored cookies matching the name passed ' +
-  'in the argument', () => {
-    document.cookie = ' myCookie=true; ';
-    document.cookie = '   yourCookie=true ; ';
+  it(
+    'seen should return the current stored cookies matching the name passed ' +
+      'in the argument',
+    () => {
+      document.cookie = ' myCookie=true; ';
+      document.cookie = '   yourCookie=true ; ';
 
-    expect(service.seen('myCookie')).toEqual(true);
-    expect(service.seen('yourCookie')).toEqual(true);
+      expect(service.seen('myCookie')).toEqual(true);
+      expect(service.seen('yourCookie')).toEqual(true);
 
-    document.cookie = 'myCookie=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
-    document.cookie = 'yourCookie=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+      document.cookie = 'myCookie=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+      document.cookie = 'yourCookie=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
 
-    expect(service.seen('myCookie')).toEqual(false);
-    expect(service.seen('yourCookie')).toEqual(false);
-  });
+      expect(service.seen('myCookie')).toEqual(false);
+      expect(service.seen('yourCookie')).toEqual(false);
+    }
+  );
 
   it('should stored different cookie names', () => {
     service.storeCookie('testCookie');

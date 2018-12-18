@@ -13,7 +13,7 @@ import {
   HostBinding,
   Input,
   Output,
-  EventEmitter,
+  EventEmitter
 } from '@angular/core';
 
 import { Angular2CookieLawService } from './angular2-cookie-law.service';
@@ -23,18 +23,19 @@ import { CookieLawTarget, CookieLawPosition } from './definitions';
 @Component({
   selector: 'cookie-law',
   template: `
-    <cookie-law-component *ngIf="!seen"
-                          [awsomeCloseIcon]="awsomeCloseIcon"
-                          [learnMore]="learnMore"
-                          [target]="target"
-                          [position]="position"
-                          (isSeen)="hasBeenDismissed()">
+    <cookie-law-component
+      *ngIf="!seen"
+      [awsomeCloseIcon]="awsomeCloseIcon"
+      [learnMore]="learnMore"
+      [target]="target"
+      [position]="position"
+      (isSeen)="hasBeenDismissed()"
+    >
       <ng-content></ng-content>
     </cookie-law-component>
-  `,
+  `
 })
 export class CookieLawContainerComponent implements OnInit {
-
   @HostBinding('attr.seen')
   public seen: boolean;
 
@@ -84,5 +85,4 @@ export class CookieLawContainerComponent implements OnInit {
   public dismiss(): void {
     this.cookieLawComponent.dismiss();
   }
-
 }
