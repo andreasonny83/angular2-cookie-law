@@ -7,11 +7,13 @@
 
 # Angular2 Cookie Law
 
-> Angular2+ component that provides a banner to inform users about the cookie law
+> Angular2+ component that provides a banner to inform users about the cookie law now with Angular Universal support
 
 Angular2 Cookie Law is an HTML `<cookie-law>` tag enhanced with styling and animation.
 
-**This documentation is for the latest version of `angular2-cookie-law` (6.x.x).**
+**This documentation is for the latest version of `angular2-cookie-law` (>=6.x.x).**
+
+**angular2-cookie-law@7 supports bot Angular v6 and v7**
 
 If you're using an older version of Angular (<6), please install `angular2-cookie-law`
 in version 1 with
@@ -166,7 +168,7 @@ If set to a valid absolute or relative URL, it will render an extra 'learn more'
 
 ### awsomeCloseIcon
 
-[Font Awesome](https://fontawesome.com/) is required in your header for this feature to work.
+Font Awsome is required in your header for this feature to work.
 
 ```html
 <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
@@ -176,7 +178,7 @@ If set to a valid absolute or relative URL, it will render an extra 'learn more'
 | --- | --- |
 | string | null |
 
-If set to a Font awesome Icon e.g. "fa-window-close" it will replace the standard SVG with the Font awesome Icon.
+If set to a Font awsome Icon e.g. "fa-window-close" it will replace the standard SVG with the Font awsome Icon.
 
 ###### Example
 

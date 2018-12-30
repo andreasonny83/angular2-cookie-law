@@ -25,7 +25,7 @@
     "url": "https://github.com/andreasonny83/angular2-cookie-law/issues"
   },
   "homepage": "https://github.com/andreasonny83/angular2-cookie-law#readme",
-  "version": "6.2.0",
+  "version": "7.0.0",
   "peerDependencies": {
     "@angular/common": "^6.0.0-rc.0 || ^6.0.0 || 7.0.0-rc.0 || ^7.0.0",
     "@angular/core": "^6.0.0-rc.0 || ^6.0.0 || 7.0.0-rc.0 || ^7.0.0"
