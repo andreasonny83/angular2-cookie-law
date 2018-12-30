@@ -11,7 +11,9 @@
 
 Angular2 Cookie Law is an HTML `<cookie-law>` tag enhanced with styling and animation.
 
-**This documentation is for the latest version of `angular2-cookie-law` (6.x.x).**
+**This documentation is for the latest version of `angular2-cookie-law` (>=6.x.x).**
+
+**angular2-cookie-law@7 supports bot Angular v6 and v7**
 
 If you're using an older version of Angular (<6), please install `angular2-cookie-law`
 in version 1 with

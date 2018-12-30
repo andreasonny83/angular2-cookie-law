@@ -6,13 +6,16 @@
     "url": "https://github.com/andreasonny83/angular2-cookie-law.git"
   },
   "keywords": [
+    "ng",
     "ng2",
-    "ng4",
+    "ng6",
+    "ng7",
     "angular",
     "angular2",
-    "angular4",
+    "angular6",
+    "angular7",
     "angular2-component",
-    "angular4-component",
+    "angular7-component",
     "cookie",
     "cookie-law"
   ],
@@ -22,9 +25,9 @@
     "url": "https://github.com/andreasonny83/angular2-cookie-law/issues"
   },
   "homepage": "https://github.com/andreasonny83/angular2-cookie-law#readme",
-  "version": "6.0.2",
+  "version": "6.2.0",
   "peerDependencies": {
-    "@angular/common": "^6.0.0-rc.0 || ^6.0.0",
-    "@angular/core": "^6.0.0-rc.0 || ^6.0.0"
+    "@angular/common": "^6.0.0-rc.0 || ^6.0.0 || 7.0.0-rc.0 || ^7.0.0",
+    "@angular/core": "^6.0.0-rc.0 || ^6.0.0 || 7.0.0-rc.0 || ^7.0.0"
   }
 }
