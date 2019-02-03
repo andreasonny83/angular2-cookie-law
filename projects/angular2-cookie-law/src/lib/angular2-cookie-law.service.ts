@@ -23,6 +23,8 @@ export class Angular2CookieLawService {
 
     if (isPlatformBrowser(this.platform)) {
       cookies = this.doc.cookie.split(';');
+    } else {
+      return true;
     }
 
     return this.cookieExisits(cookieName, cookies);
