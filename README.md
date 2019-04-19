@@ -22,7 +22,8 @@ and check out the documentation available [here](https://github.com/andreasonny8
 
 **Live DEMO:**
 
-*   [Angular2 Cookie Law with Angular6](https://stackblitz.com/edit/angular2-cookie-law)
+*   [Angular2 Cookie Law with Angular 6](https://stackblitz.com/edit/angular2-cookie-law)
+*   [Angular2 Cookie Law with Angular 7](https://stackblitz.com/edit/angular2-cookie-law-ng7)
 
 ## Table of contents
 
