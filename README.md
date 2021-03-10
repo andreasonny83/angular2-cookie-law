@@ -1,3 +1,11 @@
+# Maintainers Wanted
+
+This project was originally intended to be only consumed by my NG applications. 
+I'm now working full-time on React related project only and it's been a while since I did look into Angular related code.
+
+However, since there are now several people relying on this small and simple package, I'm looking for volunteers to actiely look after this project.
+If anyone is interested, please reply into [this ticket](https://github.com/andreasonny83/angular2-cookie-law/issues/63).
+
 [![Build Status](https://travis-ci.org/andreasonny83/angular2-cookie-law.svg?branch=master)](https://travis-ci.org/andreasonny83/angular2-cookie-law)
 [![npm version](https://badge.fury.io/js/angular2-cookie-law.svg)](https://badge.fury.io/js/angular2-cookie-law)
 [![npm](https://img.shields.io/npm/dt/angular2-cookie-law.svg)](https://www.npmjs.com/package/angular2-cookie-law)
